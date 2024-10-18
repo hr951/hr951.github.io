@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<title>Other Information</title>
+<link rel="shortcut icon" href="https://github.com/hr951/hr951.github.io/blob/main/image/favicon.ico">
+<link rel="apple-touch-icon" href="https://github.com/hr951/hr951.github.io/blob/main/image/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="https://github.com/hr951/hr951.github.io/blob/main/image/android-chrome-256x256.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><style>
+body {font-family: "Roboto", sans-serif}
+.w3-bar-block .w3-bar-item {
+  padding: 16px;
+  font-weight: bold;
+}
+</style>
+<body>
+
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-animate-left w3-card" style="z-index:3;width:250px;" id="mySidebar">
+  <a class="w3-bar-item w3-button w3-border-bottom w3-large" href="https://hr951.github.io/">Other Information</a>
+  <a class="w3-bar-item w3-button w3-hide-large w3-large" href="javascript:void(0)" onclick="w3_close()">Close <i class="fa fa-remove"></i></a>
+  <a class="w3-bar-item w3-button w3-teal" href="#">Home</a>
+  <a class="w3-bar-item w3-button" href="#ssb">Scratch Stats Bot</a>
+  <a class="w3-bar-item w3-button" href="#profilebot">Profile Bot</a>
+  <a class="w3-bar-item w3-button" href="#drpc">Discord RPC Sample</a>
+</nav>
+
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
+
+<div class="w3-main" style="margin-left:250px;">
+
+<div class="w3-container" style="padding:32px">
+
+<div class="w3-panel w3-light-grey w3-padding-16 w3-card">
+<h2 class="w3-center" id="ssb">Scratch Stats Bot</h2>
+<div class="w3-content" style="max-width:800px">
+    <p><center>Scratchに特化したScratchユーザーのためのDiscord Botです。</center></p>
+<div class="w3-row">
+  <div class="w3-col m6">
+    <a href="https://github.com/hr951/Scratch-Stats-Bot/blob/main/texts/terms.md" target="_blank" class="w3-button w3-padding-large w3-dark-grey" style="width:98.5%">利用規約 / Terms</a>
+  </div>
+  <div class="w3-col m6">
+    <a href="https://github.com/hr951/Scratch-Stats-Bot/blob/main/texts/privacypolicy.md" target="_blank" class="w3-button w3-padding-large w3-dark-grey" style="width:98.5%">プライバシーポリシー / Privacy Policy</a>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="w3-container w3-padding-16 w3-card" style="background-color:#eee">
+<h2 class="w3-center" id="profilebot">Profile Bot</h2>
+<div class="w3-content" style="max-width:800px">
+    <p><center>DiscordでMinecraftの自己紹介画像を作成できます。</center></p>
+<div class="w3-row">
+ <div class="w3-col m6">
+     <a href="https://github.com/hr951/profile-bot/blob/main/terms.md" target="_blank" class="w3-button w3-padding-large w3-dark-grey" style="width:98.5%">利用規約 / Terms</a>
+   </div>
+   <div class="w3-col m6">
+     <a href="https://github.com/hr951/profile-bot/blob/main/privacypolicy.md" target="_blank" class="w3-button w3-padding-large w3-dark-grey" style="width:98.5%">プライバシーポリシー / Privacy Policy</a>
+ </div>
+  </div>
+</div>
+</div>
+
+<div class="w3-panel w3-light-grey w3-padding-16 w3-card">
+    <h2 class="w3-center" id="drpc">Discord RPC Sample</h2>
+    <div class="w3-content" style="max-width:800px">
+        <p><center>Discord RPCを使ってカスタムプロフィールを作成するためのサンプルです。</center></p>
+    <div class="w3-row">
+      <div class="w3-col m6">
+        <a href="https://github.com/hr951/discordrpc-sample" target="_blank" class="w3-button w3-padding-large w3-dark-grey" style="width:98.5%">GitHub</a>
+      </div>
+      <div class="w3-col m6">
+        <a href="https://github.com/hr951/discordrpc-sample/blob/main/README.md" target="_blank" class="w3-button w3-padding-large w3-dark-grey" style="width:98.5%">README</a>
+      </div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</div>
+     
+</div>
+
+<script>
+// Open and close the sidebar on medium and small screens
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Change style of top container on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {
+  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    document.getElementById("myTop").classList.add("w3-card-4", "w3-animate-opacity");
+    document.getElementById("myIntro").classList.add("w3-show-inline-block");
+  } else {
+    document.getElementById("myIntro").classList.remove("w3-show-inline-block");
+    document.getElementById("myTop").classList.remove("w3-card-4", "w3-animate-opacity");
+  }
+}
+
+// Accordions
+function myAccordion(id) {
+  var x = document.getElementById(id);
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+    x.previousElementSibling.className += " w3-theme";
+  } else { 
+    x.className = x.className.replace("w3-show", "");
+    x.previousElementSibling.className = 
+    x.previousElementSibling.className.replace(" w3-theme", "");
+  }
+}
+</script>
+     
+</body>
+</html> 
