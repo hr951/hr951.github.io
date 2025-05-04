@@ -1,0 +1,230 @@
+{
+    "r7": {
+        "Annihilation": {
+            "anni1": {
+                "cord": "509 52 478",
+                "map": "Another"
+            },
+            "anni2": {
+                "cord": "974 105 1019",
+                "map": "Hamstal"
+            }
+        },
+        "BlockingDead": {
+            "bd1": {
+                "cord": "509 52 478",
+                "map": "RuinedTown"
+            }
+        },
+        "BlockParty": {
+            "bp1": {
+                "cord": "-16 17 48",
+                "map": "待機ロビー"
+            }
+        },
+        "Gravity": {
+            "gravity1": {
+                "cord": "799 238 805",
+                "map": "Antarctica"
+            },
+            "gravity2": {
+                "cord": "252 210 252",
+                "map": "Fall or Run"
+            },
+            "gravity3": {
+                "cord": "-7 249 -1",
+                "map": "Meteor"
+            },
+            "gravity4": {
+                "cord": "163 249 164",
+                "map": "Ocean"
+            },
+            "gravity5": {
+                "cord": "785 207 809",
+                "map": "Rain"
+            }
+        },
+        "MurderMystery": {
+            "mm1": {
+                "cord": "209 58 191",
+                "map": "Clinic"
+            },
+            "mm2": {
+                "cord": "93 15 68",
+                "map": "GhostTown"
+            },
+            "mm3": {
+                "cord": "209 14 232",
+                "map": "Holland"
+            },
+            "mm4": {
+                "cord": "60 46 140",
+                "map": "LakeShore"
+            },
+            "mm5": {
+                "cord": "255 26 219",
+                "map": "MazeTower"
+            },
+            "mm6": {
+                "cord": "226 75 215",
+                "map": "Wustedit"
+            }
+        },
+        "PropHunt": {
+            "pp1": {
+                "cord": "249 50 251",
+                "map": "Caribban Bandit"
+            }
+        },
+        "Sumo": {
+            "sumo1": {
+                "cord": "276 59 239",
+                "map": "KoraKora Paradise"
+            }
+        },
+        "SuperJump": {
+            "sp1": {
+                "cord": "-1519 4 -1478",
+                "map": "Mineshaft"
+            }
+        },
+        "SurvivalGames": {
+            "sg1": {
+                "cord": "-204 11 -4",
+                "map": "Venice"
+            }
+        },
+        "TheBridge": {
+            "bridge1": {
+                "cord": "-12 77 2680",
+                "map": "Pianotic（1vs1）"
+            },
+            "bridge2": {
+                "cord": "47 28 0",
+                "map": "Mirror（1vs1vs1vs1）"
+            }
+        },
+        "TNTTag": {
+            "tt1": {
+                "cord": "244 47 293",
+                "map": "Jyosco ElementX店"
+            },
+            "tt2": {
+                "cord": "242 59 301",
+                "map": "Jyosco ElementX店"
+            },
+            "tt3": {
+                "cord": "175 42 266",
+                "map": "Jyosco ElementX店"
+            },
+            "tt4": {
+                "cord": "186 19 285",
+                "map": "Nether"
+            }
+        }
+    },
+    "gw25": {
+        "Annihilation": {
+            "anni1": {
+                "cord": "0 10 -10",
+                "map": "Gloria"
+            },
+            "anni2": {
+                "cord": "0 5 -8",
+                "map": "GroryRoad"
+            },
+            "anni3": {
+                "cord": "478 48 477",
+                "map": "SwapperSwamp"
+            }
+        },
+        "BlockingDead": {
+            "bd1": {
+                "cord": "256 93 260",
+                "map": "Laboratory"
+            }
+        },
+        "BlockParty": {
+            "bp1": {
+                "cord": "-64 25 7",
+                "map": "待機ロビー"
+            }
+        },
+        "Gravity": {
+            "gravity1": {
+                "cord": "-6 249 10",
+                "map": " Drain"
+            },
+            "gravity2": {
+                "cord": "0 244 14",
+                "map": "Internal"
+            }
+        },
+        "MurderMystery": {
+            "mm1": {
+                "cord": "275 48 232",
+                "map": "Jail"
+            },
+            "mm2": {
+                "cord": "88 53 74",
+                "map": "LakeShore"
+            },
+            "mm3": {
+                "cord": "234 72 231",
+                "map": "Midget"
+            },
+            "mm4": {
+                "cord": "75 26 54",
+                "map": "ValkyrTheatre"
+            },
+            "mm5": {
+                "cord": "12 20 85",
+                "map": "VanillaMansion"
+            }
+        },
+        "PropHunt": {
+            "pp1": {
+                "cord": "277 12 279",
+                "map": "Old Apartment"
+            }
+        },
+        "SuperJump": {
+            "sp1": {
+                "cord": "-618 45 247",
+                "map": "Ice"
+            },
+            "sp2": {
+                "cord": "255 51 245",
+                "map": "Mysterious"
+            },
+            "sp3": {
+                "cord": "-377 7 -54",
+                "map": "Office"
+            }
+        },
+        "SurvivalGames": {
+            "sg1": {
+                "cord": "105 67 136",
+                "map": "BreezeIsland"
+            }
+        },
+        "TheBridge": {
+            "bridge1": {
+                "cord": "26 15 13",
+                "map": "Lotus"
+            }
+        },
+        "TNTRun": {
+            "tt1": {
+                "cord": "256 66 240",
+                "map": "Torre"
+            }
+        },
+        "TNTTag": {
+            "tt1": {
+                "cord": "16 4 -42",
+                "map": "NightCode"
+            }
+        }
+    }
+}
