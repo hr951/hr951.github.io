@@ -135,7 +135,7 @@
             },
             "anni3": {
                 "cord": "478 48 477",
-                "map": "SwapperSwamp"
+                "map": "Swapper Swamp"
             }
         },
         "BlockingDead": {
@@ -215,7 +215,7 @@
             }
         },
         "TNTRun": {
-            "tt1": {
+            "tr1": {
                 "cord": "256 66 240",
                 "map": "Torre"
             }
