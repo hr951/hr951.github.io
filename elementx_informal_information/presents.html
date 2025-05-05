@@ -29,12 +29,14 @@ body {font-family: "Roboto", sans-serif}
         element.classList.toggle("show");
     }
 </script>
+<script src="script.js" defer></script>
 <body>
 
 <nav class="w3-sidebar w3-bar-block w3-collapse w3-animate-left w3-card" style="z-index:3;width:250px;" id="mySidebar">
   <a class="w3-bar-item w3-button w3-border-bottom w3-large" href="https://hr951.github.io/elementx_informal_information.html">ElementX Informal Information</a>
   <a class="w3-bar-item w3-button w3-hide-large w3-large" href="javascript:void(0)" onclick="w3_close()">Close <i class="fa fa-remove"></i></a>
-  <a class="w3-bar-item w3-button w3-teal" href="#r7">ちょっと遅い新年度（2025）</a>
+  <a class="w3-bar-item w3-button" href="#r7">ちょっと遅い新年度（2025）</a>
+  <a class="w3-bar-item w3-button w3-teal" href="#gw25">ゴールデンウィーク 2025</a>
 </nav>
 
 <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
@@ -55,7 +57,7 @@ body {font-family: "Roboto", sans-serif}
   <h3>個数：36<br>報酬：称号[R7],星4,星5のElementBox1つずつ</h3>
     
 <div class="w3-panel w3-light-grey w3-padding-16 w3-card">
-    <h4><b>Lobby（10個）</b></h4>
+    <h4><b>ロビー（10個）</b></h4>
         20014 60 20000<br>
         <button onclick="toggleVisibility('r7_lobby1')">画像を表示・非表示</button>
         <div id="r7_lobby1" class="myClass">
@@ -282,6 +284,16 @@ body {font-family: "Roboto", sans-serif}
         <div id="r7_tt4" class="myClass">
             <img src="../image/elementx_presents/r7/r7_tt4.jpeg" style="width:98%;margin:20px 0">
         </div><br>
+
+</div>
+
+<h2 id="gw25"><b>ゴールデンウィーク 2025</b></h2>
+  <h3>個数：36<br>報酬：称号[GW25],星4,星5のElementBox1つずつ</h3>
+    
+  <div class="w3-panel w3-light-grey w3-padding-16 w3-card">
+    <div id="gw25-lobby"></div>
+    <div id="gw25-games"></div>
+
 
 </div>
   
