@@ -11,7 +11,7 @@ fetch('https://raw.githubusercontent.com/hr951/hr951.github.io/refs/heads/main/e
         // `r7` のデータがある場合
         if (jsonData["r7"] && r7lobby) {
             appendCategory(jsonData["r7"]["lobby"], `ロビー（${Object.keys(jsonData.r7.lobby).length}個）`, r7lobby, "r7");
-            appendCategory(jsonData["r7"]["AFK"], `AFKロビー（${Object.keys(jsonData.r7.AFK).length}個）`, r7lobby, "r7");
+            appendCategory(jsonData["r7"]["afk"], `AFKロビー（${Object.keys(jsonData.r7.afk).length}個）`, r7lobby, "r7");
         } else {
             console.error("Error: 'r7' データが見つかりません！");
         }
@@ -20,7 +20,7 @@ fetch('https://raw.githubusercontent.com/hr951/hr951.github.io/refs/heads/main/e
         if (jsonData["gw25"] && gw25lobby) {
             appendCategory(jsonData["gw25"]["lobby"], `ロビー（${Object.keys(jsonData.gw25.lobby).length}個）`, gw25lobby, "gw25");
             appendCategory(jsonData["gw25"]["old"], `旧ロビー（${Object.keys(jsonData.gw25.old).length}個）`, gw25lobby, "gw25");
-            appendCategory(jsonData["gw25"]["AFK"], `AFKロビー（${Object.keys(jsonData.gw25.AFK).length}個）`, gw25lobby, "gw25");
+            appendCategory(jsonData["gw25"]["afk"], `AFKロビー（${Object.keys(jsonData.gw25.afk).length}個）`, gw25lobby, "gw25");
         } else {
             console.error("Error: 'gw25' データが見つかりません！");
         }
