@@ -41,6 +41,15 @@ fetch('https://raw.githubusercontent.com/hr951/hr951.github.io/refs/heads/main/e
         if (jsonData["r7"] && r7games) {
             appendCategory_games(jsonData["r7"]["Annihilation"], `Annihilation（${Object.keys(jsonData.r7.Annihilation).length}個）`, r7games, "r7");
             appendCategory_games(jsonData["r7"]["BlockingDead"], `BlockingDead（${Object.keys(jsonData.r7.BlockingDead).length}個）`, r7games, "r7");
+            appendCategory_games(jsonData["r7"]["BlockParty"], `BlockParty（${Object.keys(jsonData.r7.BlockParty).length}個）`, r7games, "r7");
+            appendCategory_games(jsonData["r7"]["Gravity"], `Gravity（${Object.keys(jsonData.r7.Gravity).length}個）`, r7games, "r7");
+            appendCategory_games(jsonData["r7"]["MurderMystery"], `MurderMystery（${Object.keys(jsonData.r7.MurderMystery).length}個）`, r7games, "r7");
+            appendCategory_games(jsonData["r7"]["PropHunt"], `PropHunt（${Object.keys(jsonData.r7.PropHunt).length}個）`, r7games, "r7");
+            appendCategory_games(jsonData["r7"]["Sumo"], `Sumo（${Object.keys(jsonData.r7.Sumo).length}個）`, r7games, "r7");
+            appendCategory_games(jsonData["r7"]["SuperJump"], `SuperJump（${Object.keys(jsonData.r7.SuperJump).length}個）`, r7games, "r7");
+            appendCategory_games(jsonData["r7"]["SurvivalGames"], `SurvivalGames（${Object.keys(jsonData.r7.SurvivalGames).length}個）`, r7games, "r7");
+            appendCategory_games(jsonData["r7"]["TheBridge"], `TheBridge（${Object.keys(jsonData.r7.TheBridge).length}個）`, r7games, "r7");
+            appendCategory_games(jsonData["r7"]["TNTTag"], `TNTtag（${Object.keys(jsonData.r7.TNTTag).length}個）`, r7games, "r7");
         } else {
             console.error("Error: 'r7' データが見つかりません！");
         }
@@ -81,7 +90,7 @@ function appendCategory(data, title, container, times) {
                 ${coordinates}<br>
                 <button onclick="toggleVisibility('${title}_${itemNum}')">画像を表示・非表示</button>
                 <div id="${title}_${itemNum}" class="myClass">
-                    <img src="../image/elementx_presents/${times}/${times}_${key}.jpeg" style="width:98%;margin:20px 0">
+                    <img src="./image/elementx_presents/${times}/${times}_${key}.jpeg" style="width:98%;margin:20px 0">
                 </div><br>
         `;
         
@@ -108,7 +117,7 @@ function appendCategory_games(data, title, container, times) {
                 ${coordinates}<br>
                 <button onclick="toggleVisibility('${title}_${itemNum}')">画像を表示・非表示</button>
                 <div id="${title}_${itemNum}" class="myClass">
-                    <img src="../image/elementx_presents/${times}/${times}_${key}.jpeg" style="width:98%;margin:20px 0">
+                    <img src="./image/elementx_presents/${times}/${times}_${key}.jpeg" style="width:98%;margin:20px 0">
                 </div><br>
         `;
         
