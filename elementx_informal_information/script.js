@@ -81,7 +81,7 @@ function appendCategory(data, title, container, times) {
                 ${coordinates}<br>
                 <button onclick="toggleVisibility('${title}_${itemNum}')">画像を表示・非表示</button>
                 <div id="${title}_${itemNum}" class="myClass">
-                    <img src="./image/elementx_presents/${times}/${times}_${key}.jpeg" style="width:98%;margin:20px 0">
+                    <img src="../image/elementx_presents/${times}/${times}_${key}.jpeg" style="width:98%;margin:20px 0">
                 </div><br>
         `;
         
@@ -108,7 +108,7 @@ function appendCategory_games(data, title, container, times) {
                 ${coordinates}<br>
                 <button onclick="toggleVisibility('${title}_${itemNum}')">画像を表示・非表示</button>
                 <div id="${title}_${itemNum}" class="myClass">
-                    <img src="./image/elementx_presents/${times}/${times}_${key}.jpeg" style="width:98%;margin:20px 0">
+                    <img src="../image/elementx_presents/${times}/${times}_${key}.jpeg" style="width:98%;margin:20px 0">
                 </div><br>
         `;
         
