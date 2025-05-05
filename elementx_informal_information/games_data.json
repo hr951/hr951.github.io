@@ -71,7 +71,7 @@
             }
         },
         "PropHunt": {
-            "pp1": {
+            "ph1": {
                 "cord": "249 50 251",
                 "map": "Caribban Bandit"
             }
@@ -183,21 +183,21 @@
             }
         },
         "PropHunt": {
-            "pp1": {
+            "ph1": {
                 "cord": "277 12 279",
                 "map": "Old Apartment"
             }
         },
         "SuperJump": {
-            "sp1": {
+            "sj1": {
                 "cord": "-618 45 247",
                 "map": "Ice"
             },
-            "sp2": {
+            "sj2": {
                 "cord": "255 51 245",
                 "map": "Mysterious"
             },
-            "sp3": {
+            "sj3": {
                 "cord": "-377 7 -54",
                 "map": "Office"
             }
