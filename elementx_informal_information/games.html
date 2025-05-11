@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html>
+<title>ElementX Games</title>
+<link rel="shortcut icon" href="https://github.com/hr951/hr951.github.io/blob/main/image/favicon.ico">
+<link rel="apple-touch-icon" href="https://github.com/hr951/hr951.github.io/blob/main/image/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="https://github.com/hr951/hr951.github.io/blob/main/image/android-chrome-256x256.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: "Roboto", sans-serif}
+.w3-bar-block .w3-bar-item {
+  padding: 16px;
+  font-weight: bold;
+}
+.myClass {
+            display: none;
+            transition: display 0.5s ease;
+        }
+.show {
+    display: block;
+}
+</style>
+<script>
+    function toggleVisibility(image) {
+        var element = document.getElementById(image);
+        element.classList.toggle("show");
+    }
+</script>
+<body>
+
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-animate-left w3-card" style="z-index:3;width:250px;" id="mySidebar">
+  <a class="w3-bar-item w3-button w3-border-bottom w3-large">ElementX Informal Information</a>
+  <a class="w3-bar-item w3-button w3-hide-large w3-large" href="javascript:void(0)" onclick="w3_close()">Close <i class="fa fa-remove"></i></a>
+  <div>
+    <a class="w3-bar-item w3-button" onclick="myAccordion('demo')" href="javascript:void(0)">アーケードゲーム <i class="fa fa-caret-down"></i></a>
+    <div id="demo" class="w3-hide">
+      <a class="w3-bar-item w3-button" onclick="myAccordion('arcade-bd')" href="javascript:void(0)">BlockingDead <i class="fa fa-caret-down"></i></a>
+    <div id="arcade-bd" class="w3-hide">
+      <a class="w3-bar-item w3-button" href="#bd-difficulty">Difficulty Levels / 難易度</a>
+      <a class="w3-bar-item w3-button" href="#bd-map">Maps / マップ</a>
+    </div>
+      <a class="w3-bar-item w3-button" href="#bp">BlockParty</a>
+      <a class="w3-bar-item w3-button" href="#bb">BuildBattle</a>
+      <a class="w3-bar-item w3-button" onclick="myAccordion('arcade-mm')" href="javascript:void(0)">MurderMystery <i class="fa fa-caret-down"></i></a>
+    <div id="arcade-mm" class="w3-hide">
+      <a class="w3-bar-item w3-button" href="#mm-map">Maps / マップ</a>
+      <a class="w3-bar-item w3-button" href="#mm-weapon">Murder's Weapons / マーダーの武器</a>
+    </div>
+      <a class="w3-bar-item w3-button" href="#ph">PropHunt</a>
+      <a class="w3-bar-item w3-button" onclick="myAccordion('arcade-tr')" href="javascript:void(0)">TNTRun <i class="fa fa-caret-down"></i></a>
+    <div id="arcade-tr" class="w3-hide">
+      <a class="w3-bar-item w3-button" href="#tr-map">Maps / マップ</a>
+      <a class="w3-bar-item w3-button" href="#tr-double">Double Jump / ダブルジャンプ</a>
+      <a class="w3-bar-item w3-button" href="#tr-slowness">Slowness SplashPotion / 鈍化のスプラッシュポーション</a>
+      <a class="w3-bar-item w3-button" href="#tr-speed">Speed SplashPotion / 俊敏のスプラッシュポーション</a>
+      <a class="w3-bar-item w3-button" href="#tr-particle">Particles / パーティクル</a>
+    </div>
+      <a class="w3-bar-item w3-button" onclick="myAccordion('arcade-tt')" href="javascript:void(0)">TNTTag <i class="fa fa-caret-down"></i></a>
+    <div id="arcade-tt" class="w3-hide">
+      <a class="w3-bar-item w3-button" href="#tt-map">Maps / マップ</a>
+      <a class="w3-bar-item w3-button" href="#tt-exres">Explosion Resistant / 爆発耐性</a>
+    </div>
+    </div>
+  </div>
+  <div>
+    <a class="w3-bar-item w3-button" onclick="myAccordion('demo1')" href="javascript:void(0)">クラシックゲーム <i class="fa fa-caret-down"></i></a>
+    <div id="demo1" class="w3-hide">
+      <a class="w3-bar-item w3-button" href="#gr">Gravity</a>
+      <a class="w3-bar-item w3-button" onclick="myAccordion('classic-qc')" href="javascript:void(0)">QuakeCraft <i class="fa fa-caret-down"></i></a>
+    <div id="classic-qc" class="w3-hide">
+      <a class="w3-bar-item w3-button" href="#qc-map">Maps / マップ</a>
+      <a class="w3-bar-item w3-button" href="#qc-railgun">RailGun / レールガン</a>
+    </div>
+      <a class="w3-bar-item w3-button" href="#sp">Splegg</a>
+      <a class="w3-bar-item w3-button" href="#sj">SuperJump</a>
+      <a class="w3-bar-item w3-button" href="#sg">SurvivalGames</a>
+    </div>
+  </div>
+  <div>
+    <a class="w3-bar-item w3-button" onclick="myAccordion('demo2')" href="javascript:void(0)">デュエルゲーム <i class="fa fa-caret-down"></i></a>
+    <div id="demo2" class="w3-hide">
+      <a class="w3-bar-item w3-button" onclick="myAccordion('duel-bu')" href="javascript:void(0)">BuildUHC <i class="fa fa-caret-down"></i></a>
+    <div id="duel-bu" class="w3-hide">
+      <a class="w3-bar-item w3-button" href="#bu-map">Maps / マップ</a>
+      <a class="w3-bar-item w3-button" href="#bu-kill">KillEffects / キルエフェクト</a>
+    </div>
+      <a class="w3-bar-item w3-button" onclick="myAccordion('duel-su')" href="javascript:void(0)">Sumo <i class="fa fa-caret-down"></i></a>
+    <div id="duel-su" class="w3-hide">
+      <a class="w3-bar-item w3-button" href="#su-vscom">vs Computer Maps / vs Computer マップ</a>
+      <a class="w3-bar-item w3-button" href="#su-vshu">1vs1 Maps / 1vs1 マップ</a>
+    </div>
+      <a class="w3-bar-item w3-button" onclick="myAccordion('duel-tb')" href="javascript:void(0)">TheBridge <i class="fa fa-caret-down"></i></a>
+    <div id="duel-tb" class="w3-hide">
+      <a class="w3-bar-item w3-button" href="#tb-1vs1map">1vs1 , Reset 1vs1 Maps / 1vs1 , Reset 1vs1 マップ</a>
+      <a class="w3-bar-item w3-button" href="#th-1vs1vs1map">1vs1vs1vs1 Maps / 1vs1vs1vs1 マップ</a>
+    </div>
+    </div>
+  </div>
+  <div>
+    <a class="w3-bar-item w3-button" onclick="myAccordion('demo3')" href="javascript:void(0)">Warsゲーム <i class="fa fa-caret-down"></i></a>
+    <div id="demo3" class="w3-hide">
+      <a class="w3-bar-item w3-button" onclick="myAccordion('wars-anni')" href="javascript:void(0)">Annihilation <i class="fa fa-caret-down"></i></a>
+    <div id="wars-anni" class="w3-hide">
+      <a class="w3-bar-item w3-button" href="#an-job">Jobs / 職業</a>
+      <a class="w3-bar-item w3-button" href="#an-map">Maps / マップ</a>
+      <a class="w3-bar-item w3-button" href="#an-kill">KillEffects / キルエフェクト</a>
+      <a class="w3-bar-item w3-button" onclick="myAccordion('anni-other')" href="javascript:void(0)">Others / その他 <i class="fa fa-caret-down"></i></a>
+    <div id="anni-other" class="w3-hide">
+      <a class="w3-bar-item w3-button" href="#an-rank">Rank / ランク</a>
+    </div>
+    </div>
+      <a class="w3-bar-item w3-button" onclick="myAccordion('wars-bw')" href="javascript:void(0)">BedWars <i class="fa fa-caret-down"></i></a>
+    <div id="wars-bw" class="w3-hide">
+      <a class="w3-bar-item w3-button" href="#an-solomap">Solo Doubles Maps / Solo Doubles マップ</a>
+      <a class="w3-bar-item w3-button" href="#an-3v3map">3vs3vs3vs3 Maps / 3vs3vs3vs3 マップ</a>
+      <a class="w3-bar-item w3-button" href="#an-kill">KillEffects / キルエフェクト</a>
+    </div>
+    </div>
+  </div>
+</nav>
+
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
+<div class="w3-main" style="margin-left:250px;">
+
+<div id="myTop" class="w3-container w3-top w3-theme w3-large">
+<p><i class="fa fa-bars w3-button w3-teal w3-hide-large w3-xlarge" onclick="w3_open()"></i>
+<span id="myIntro" class="w3-hide">ElementX Informal Information</span></p>
+</div>
+
+<header class="w3-container w3-theme" style="padding:64px 32px">
+  <h1 class="w3-xxxlarge">ElementX Informal Information</h1>
+</header>
+
+<div class="w3-container" style="padding:32px">
+
+  <h2 id="an"><b>Annihilation</b></h2>
+    
+<div class="w3-panel w3-light-grey w3-padding-16 w3-card">
+
+    <h3 id="an-job"><b>Jobs / 職業</b></h3>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Acrobat</b><br>
+    常時落下ダメージ無効。ジャンプ中に再度ジャンプを押して高く飛ぶ。<br>
+    80000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Alchemist</b><br>
+    常時醸造台を所持。ポーションの材料をいくつかドロップする。<br>
+    50000 Warsゲームコイン<br>
+    Silver-Ⅱで開放。<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Archer</b><br>
+    弓での攻撃力が+1される。<br>
+    50000 Warsゲームコイン<br>
+    Novice-Ⅱで開放。<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Assassin</b><br>
+    大ジャンプし、手持ちのアイテム以外透明化する。<br>
+    60000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Bard</b><br>
+    音楽を流すことで敵の妨害をし、味方を強化する。<br>
+    50000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Berserker</b><br>
+    初期体力が14。敵を倒す度に体力の上限が増えるが、死ぬと減ってしまう。15秒間スピードが増加する。<br>
+    50000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・BloodMage</b><br>
+    攻撃時一定の確率で毒を付与。周囲の敵にウィザーを付与し最大体力を減らす。<br>
+    50000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Builder</b><br>
+    建材をドロップする。<br>
+    50000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Civilian</b><br>
+    どの場所でも作業台を開く。<br>
+    0 Warsゲームコイン<br>
+    初期開放<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Dasher</b><br>
+    敵を倒す度に満腹度を回復する。スニークで照準を合わせ、テレポートする。<br>
+    50000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Defender</b><br>
+    自軍ネクサスの近くにいるとき再生1が付き、残りネクサスが少ないと最大体力が増加する。自軍ネクサスの近くにいるとき瞬時にネクサスまで戻れる。<br>
+    50000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Enchanter</b><br>
+    ブロック破壊時の経験値が常に2倍。エンチャントした時に一定確率でレベルが+1になる。周りのチームメイトがもらえる経験値が一時的に増える。<br>
+    80000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Engineer</b><br>
+    死んだあと、その場で小さい爆発が起こる。手元のTNTで敵のブロックが破壊できる。TNTの大きさはスニークしながらTNTを持ってクリックする。<br>
+    50000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Farmer</b><br>
+    作物を収穫した時に様々なアイテムをドロップする。周囲の敵を空腹にさせる。<br>
+    50000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Glider</b><br>
+    常時エリトラを所持。エリトラで飛行時にさらに高く飛ぶ。<br>
+    50000 Warsゲームコイン<br>
+    Novice-Ⅲで開放。<br>
+    現在使用不可。<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Handyman</b><br>
+    敵のNexusにダメージを与えた際、一定確率で自軍のNexusの体力が回復する。<br>
+    50000 Warsゲームコイン<br>
+    Gold-Ⅱで開放。<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Healer</b><br>
+    常時弱体化1。周囲の味方のHPを見ることができる。右クリックまたはTapで周囲3人までの味方を回復する。左クリックまたはドロップで味方一人を大きく回復する。<br>
+    50000 Warsゲームコイン<br>
+    Silver-Ⅲで開放。<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Hunter</b><br>
+    罠を設置して敵の妨害をする。<br>
+    50000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Iceman</b><br>
+    殴られたとき敵に一定確率で鈍足を付ける。足場の生成を切り替えます。<br>
+    50000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Immobilizer</b><br>
+    右クリックで自分と敵の動きを止め、左クリックで半径5マス以内の敵に鈍足。<br>
+    50000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Lumberjack</b><br>
+    一定の確率で二つ原木をもらえる。斧で攻撃した時敵の防具の耐久値を削る。<br>
+    50000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Ninja</b><br>
+    手裏剣を所持し、投げつけると効果を発揮する。煙幕を投げつけ、その煙幕の6m以内に敵や味方にエフェクトを付与する。<br>
+    50000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Mercenary</b><br>
+    視線上の敵をマークする。また、マークされた敵に対して攻撃力が上昇する。<br>
+    50000 Warsゲームコイン<br>
+    Gold-Ⅰで開放。<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Miner</b><br>
+    一部の鉱石を壊した時、一定の確率で2つもらえる。10秒間鉱石が多くもらえる。<br>
+    50000 Warsゲームコイン<br>
+    Novice-Ⅰで開放。<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Pyro</b><br>
+    火やマグマのダメージを無効化し、攻撃した時に一定確率で相手に少しの間火を付ける。半径4ブロック内のプレイヤーに火を付ける。<br>
+    50000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・RiftWalker</b><br>
+    行先を指定し、味方と共に瞬時に移動できる。<br>
+    50000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・RobinHood</b><br>
+    常時弱体化1。矢を敵に当てたときに一定の確率で手元に戻ってくる。敵をキルすると弓のTierが上がっていく。<br>
+    50000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Scorpio</b><br>
+    Hookを左クリックで味方に当てると味方に引っ張られる。右クリックで敵に当てると敵を引き寄せる。<br>
+    60000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Scout</b><br>
+    釣竿を所持している間落下ダメージを軽減する。釣竿をクリックした時に引っ掛けた釣竿の針へ引っ張られる。<br>
+    100000 Warsゲームコイン<br>
+    Master-Ⅰで開放。<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Sniper</b><br>
+    スナイパーモードで撃った場合、矢の速度とダメージが少し上がり当たった敵に火を付ける。弓をスニークしながらブロックをクリックで通常モードかスナイパーモードか切り替える。スナイパーモードの場合は、射った矢は重力を無視する。<br>
+    50000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Spider</b><br>
+    プレイヤー足止めの蜘蛛の巣を4個所持。つたをクリックで壁を登れる機能を切り替えます。<br>
+    60000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Spy</b><br>
+    スニークで透明になる。特定の動作をすると解除される。透明になり、分身を召喚する。<br>
+    50000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Succubus</b><br>
+    敵のHPが見えるようになる。ダメージを与えたとき、一定の割合でダメージ分の15%回復する。周りのプレイヤーの体力が一定未満の場合は、そのプレイヤーを殺しそのHPは自分のものとなるが、HPが多い場合は自分がダメージを受ける。<br>
+    50000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Swapper</b><br>
+    敵と自分の位置を入れ替える事ができ、スワップされた人は鈍化2が3秒間つきます。<br>
+    50000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Thor</b><br>
+    常時耐性1。周囲の敵に固定ダメージを与える。<br>
+    50000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Tinkerer</b><br>
+    鉱石を置くと、パワーパッドとして使うことができ、金床を用いて本とアイテムをいれるとエンチャントを剥がすことができる。<br>
+    50000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Transporter</b><br>
+    チームが行き来できるポータルを作ることができます。<br>
+    50000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Vampire</b><br>
+    暗い場所で耐性1。明るい場所では落下ダメージを一定確率で無効にする。暗い場所で蝙蝠に変身できる。<br>
+    100000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Warrior</b><br>
+    近距離攻撃だと攻撃力が+1される。15秒間攻撃力が+1されるが、打たれ弱くなる。<br>
+    50000 Warsゲームコイン<br>
+    Silver-Ⅰで開放。<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Wizard</b><br>
+    Spellbookから選択した魔法を発射する。<br>
+    50000 Warsゲームコイン<br>
+    </div>
+
+    <h3 id="an-map"><b>Maps / マップ</b></h3>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・AbydosValley</b><br>
+    エンチャントテーブル、金床<br>
+    BossGate Mid<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Another</b><br>
+    BossGate 赤青→右 黄緑→左<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Castle Town</b><br>
+    金床<br>
+    BossGate 赤青→右 黄緑→左<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Cometor</b><br>
+    BossGate 赤青→ 黄緑→<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Coralbeach</b><br>
+    エンチャントテーブル、金床<br>
+    BossGate 赤青→ 黄緑→<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Eldor</b><br>
+    BossGate 赤青→左 黄緑→右<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Gloria v1.1</b><br>
+    エンチャントテーブル、金床<br>
+    BossGate 赤青→右 黄緑→左<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・GloryRoad 2.0</b><br>
+    BossGate 赤青→ 黄緑→<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Glowing Up v1.1</b><br>
+    エンチャントテーブル、金床<br>
+    BossGate 赤青→左 黄緑→右<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Hamstal v2.0</b><br>
+    金床<br>
+    BossGate 赤青→右 黄緑→左<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Harvestival</b><br>
+    エンチャントテーブル<br>
+    BossGate 赤青→ 黄緑→<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Hillock2.0</b><br>
+    金床<br>
+    BossGate 赤青→ 黄緑→<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Indian</b><br>
+    BossGate 赤青→右 黄緑→左<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Jungle Ruins</b><br>
+    BossGate 赤青→左 黄緑→右<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・LandingOperation</b><br>
+    BossGate 赤青→右 黄緑→左<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Meltdown v1.5</b><br>
+    金床<br>
+    BossGate 赤青→ 黄緑→<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・NatureRoad</b><br>
+    BossGate 赤青→ 黄緑→<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Savanna 2.0</b><br>
+    金床<br>
+    BossGate 赤青→右 黄緑→左<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Snowy</b><br>
+    BossGate 赤青→右 黄緑→左<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Spruce</b><br>
+    BossGate 赤青→右 黄緑→左<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Swapper Swamp</b><br>
+    エンチャントテーブル、金床<br>
+    BossGate 赤青→ 黄緑→<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・WoodGarden V2</b><br>
+    BossGate 赤青→左 黄緑→右<br>
+    </div>
+
+    <h3 id="an-kill"><b>KillEffects / キルエフェクト</b></h3>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Blue Blood</b><br>
+    200000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Wool Fountain</b><br>
+    500000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Cookie Fountain</b><br>
+    300000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Critical Curtain</b><br>
+    500000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Diamond Fountain</b><br>
+    400000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Emerald Fountain</b><br>
+    400000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Flame Drowned</b><br>
+    200000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Gold Nugget</b><br>
+    200000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Nostalgic Steve</b><br>
+    200000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Rainbow Curtain</b><br>
+    600000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Rainbow Sphere</b><br>
+    500000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Red Blood</b><br>
+    200000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・RedStone Curtain</b><br>
+    500000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・RIP Grave</b><br>
+    700000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Sparkler Curtain</b><br>
+    600000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Thunderbolt</b><br>
+    200000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・TNT</b><br>
+    200000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Totem</b><br>
+    600000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Water Curtain</b><br>
+    500000 Warsゲームコイン<br>
+    </div>
+
+    <h3 id="an-other"><b>Others / その他</b></h3>
+
+    <h4 id="an-rank"><b>Rank / ランク</b></h4>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・初期</b><br>
+    Civilian<br>
+    0 xp<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Novice-Ⅰ</b><br>
+    Miner<br>
+    xp<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Novice-Ⅱ</b><br>
+    Archer<br>
+    xp<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Novice-Ⅲ</b><br>
+    Glider<br>
+    xp<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Silver-Ⅰ</b><br>
+    Warrior<br>
+    35000 xp<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Silver-Ⅱ</b><br>
+    Alchemist<br>
+    60000 xp<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Silver-Ⅲ</b><br>
+    Healer<br>
+    85000 xp<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Gold-Ⅰ</b><br>
+    Mercenary<br>
+    200000 xp<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Gold-Ⅱ</b><br>
+    Handyman<br>
+    250000 xp<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Master-Ⅰ</b><br>
+    Scout<br>
+    350000 xp<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Grandmaster</b><br>
+    ロビーグラップル<br>
+    750000 xp<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Annihilator</b><br>
+    キルエフェクト<br>
+    1000000 xp<br>
+    </div>
+
+</div>
+
+  <h2 id="bw"><b>BedWars</b></h2>
+
+  <div class="w3-panel w3-light-grey w3-padding-16 w3-card">
+
+    <h3 id="bw-solomap"><b>Solo Doubles Maps / Solo Doubles マップ</b></h3>
+    <b>・EnchantTable</b><br>
+    <b>・Cove</b><br>
+    <b>・ForestHouse</b><br>
+    <b>・KingBed</b><br>
+
+    <h3 id="bw-3v3map"><b>3vs3vs3vs3 Maps / 3vs3vs3vs3 マップ</b></h3>
+    <b>・Church</b><br>
+    <b>・Halloween</b><br>
+    <b>・Showdown</b><br>
+
+    <h3 id="bw-kill"><b>KillEffects / キルエフェクト</b></h3>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Blue Blood</b><br>
+    200000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Wool Fountain</b><br>
+    500000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Cookie Fountain</b><br>
+    300000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Critical Curtain</b><br>
+    500000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Diamond Fountain</b><br>
+    400000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Emerald Fountain</b><br>
+    400000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Flame Drowned</b><br>
+    200000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Gold Nugget</b><br>
+    200000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Nostalgic Steve</b><br>
+    200000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Rainbow Curtain</b><br>
+    600000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Rainbow Sphere</b><br>
+    500000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Red Blood</b><br>
+    200000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・RedStone Curtain</b><br>
+    500000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・RIP Grave</b><br>
+    700000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Sparkler Curtain</b><br>
+    600000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Thunderbolt</b><br>
+    200000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・TNT</b><br>
+    200000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Totem</b><br>
+    600000 Warsゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Water Curtain</b><br>
+    500000 Warsゲームコイン<br>
+    </div>
+
+  </div>
+
+  <h2 id="bd"><b>BlockingDead</b></h2>
+
+  <div class="w3-panel w3-light-grey w3-padding-16 w3-card">
+
+    <h3 id="bd-difficulty"><b>Difficulty Levels / 難易度</b></h3>
+    <b>・Training（実績解除不可）</b><br>
+    <b>・Basic</b><br>
+    <b>・Advanced</b><br>
+    <b>・Ultimate（クリアで実績あり）</b><br>
+    <b>・World End（クリアで実績あり）</b><br>
+    <b>・IMPOSSIBLE（クリアで実績あり）</b><br>
+
+    <h3 id="bd-map"><b>Maps / マップ</b></h3>
+    <b>・Laboratory</b><br>
+    <b>・RuinedTown</b><br>
+
+  </div>
+
+  <h2 id="bp"><b>BlockParty</b></h2>
+
+  <div class="w3-panel w3-light-grey w3-padding-16 w3-card">
+
+    <h3 id="bp-particle"><b>Particles / パーティクル</b></h3>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・青い炎</b><br>
+    150000 アーケードゲームコイン
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・エンチャント</b><br>
+    70000 アーケードゲームコイン
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・エンドロッド</b><br>
+    120000 アーケードゲームコイン
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・うきうきな村人</b><br>
+    150000 アーケードゲームコイン
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・ハート</b><br>
+    100000 アーケードゲームコイン
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・赤い炎</b><br>
+    80000 アーケードゲームコイン
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・線香花火</b><br>
+    300000 アーケードゲームコイン
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・ウィッチ</b><br>
+    200000 アーケードゲームコイン
+    </div>
+
+  </div>
+
+  <h2 id="bb"><b>BuildBattle</b></h2>
+
+  <div class="w3-panel w3-light-grey w3-padding-16 w3-card">
+
+    <h3 id="bb-noinfo"><b>No Information / 情報なし</b></h3>
+    
+  </div>
+
+  <h2 id="bu"><b>BuildUHC</b></h2>
+
+  <div class="w3-panel w3-light-grey w3-padding-16 w3-card">
+
+    <h3 id="bu-map"><b>Maps / マップ</b></h3>
+    <b>・Aquarium</b><br>
+    <b>・Desert</b><br>
+    <b>・Grotta</b><br>
+    <b>・Intersection</b><br>
+    <b>・KinokoTakenokoWar</b><br>
+    <b>・Onsen</b><br>
+    <b>・Park</b><br>
+    <b>・Prairie</b><br>
+    <b>・Skiing</b><br>
+    <b>・Undersea Temple</b><br>
+    <b>・White_Box</b><br>
+
+    <h3 id="bu-kill"><b>KillEffects / キルエフェクト</b></h3>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Blue Blood</b><br>
+    40000 デュエルゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Wool Fountain</b><br>
+    100000 デュエルゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Cookie Fountain</b><br>
+    60000 デュエルゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Critical Curtain</b><br>
+    100000 デュエルゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Diamond Fountain</b><br>
+    80000 デュエルゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Emerald Fountain</b><br>
+    80000 デュエルゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Flame Drowned</b><br>
+    40000 デュエルゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Gold Nugget</b><br>
+    40000 デュエルゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Nostalgic Steve</b><br>
+    40000 デュエルゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Rainbow Curtain</b><br>
+    120000 デュエルゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Rainbow Sphere</b><br>
+    100000 デュエルゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Red Blood</b><br>
+    40000 デュエルゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・RedStone Curtain</b><br>
+    100000 デュエルゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・RIP Grave</b><br>
+    140000 デュエルゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Sparkler Curtain</b><br>
+    120000 デュエルゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Thunderbolt</b><br>
+    40000 デュエルゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・TNT</b><br>
+    40000 デュエルゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Totem</b><br>
+    120000 デュエルゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・Water Curtain</b><br>
+    100000 デュエルゲームコイン<br>
+    </div>
+    
+  </div>
+
+  <h2 id="gr"><b>Gravity</b></h2>
+
+  <div class="w3-panel w3-light-grey w3-padding-16 w3-card">
+
+    <h3 id="gr-map"><b>Maps / マップ</b></h3>
+    <b>・Airways</b><br>
+    <b>・Antarctica</b><br>
+    <b>・BeeRing</b><br>
+    <b>・Biomes</b><br>
+    <b>・Camping</b><br>
+    <b>・Cars</b><br>
+    <b>・Clockwork</b><br>
+    <b>・Colors</b><br>
+    <b>・CPU</b><br>
+    <b>・Deeper and Deeper</b><br>
+    <b>・Drain</b><br>
+    <b>・Fall or Run</b><br>
+    <b>・GravitySpire</b><br>
+    <b>・Hell</b><br>
+    <b>・Internal</b><br>
+    <b>・Merdiantrench</b><br>
+    <b>・Meteor</b><br>
+    <b>・Mine</b><br>
+    <b>・Mobs</b><br>
+    <b>・Ocean</b><br>
+    <b>・Rain</b><br>
+    <b>・Rhythm</b><br>
+    <b>・Scattered Blocks</b><br>
+    <b>・Shaker</b><br>
+    <b>・Shrooms</b><br>
+    <b>・Stew</b><br>
+    <b>・Tetris</b><br>
+    <b>・Traffic</b><br>
+    <b>・Volcano</b><br>
+    <b>・Warfare</b><br>
+    
+  </div>
+
+  <h2 id="mm"><b>MurderMystery</b></h2>
+
+  <div class="w3-panel w3-light-grey w3-padding-16 w3-card">
+
+    <h3 id="mm-map"><b>Maps / マップ</b></h3>
+    <b>・Azglesier</b><br>
+    <b>・Clinic</b><br>
+    <b>・GhostTown</b><br>
+    <b>・Holland</b><br>
+    <b>・Jail</b><br>
+    <b>・LakeShore</b><br>
+    <b>・MazeTower</b><br>
+    <b>・Midget</b><br>
+    <b>・Shrine</b><br>
+    <b>・ValkyrTheatre</b><br>
+    <b>・VanillaMansion</b><br>
+    <b>・Wustedt</b><br>
+
+    <h3 id="mm-weapon"><b>Murder's Weapons / マーダーの武器</b></h3>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・ダイヤの斧</b><br>
+    70000 アーケードゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・ダイヤのくわ</b><br>
+    50000 アーケードゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・ダイヤのピッケル</b><br>
+    100000 アーケードゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・ダイヤの剣</b><br>
+    200000 アーケードゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・金の斧</b><br>
+    40000 アーケードゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・金のくわ</b><br>
+    40000 アーケードゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・金のピッケル</b><br>
+    60000 アーケードゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・金の剣</b><br>
+    120000 アーケードゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・鉄の斧</b><br>
+    20000 アーケードゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・鉄のくわ</b><br>
+    15000 アーケードゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・鉄のピッケル</b><br>
+    30000 アーケードゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・鉄の剣</b><br>
+    60000 アーケードゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・石の剣</b><br>
+    20000 アーケードゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・木の剣</b><br>
+    0 アーケードゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・木の棒</b><br>
+    40000 アーケードゲームコイン<br>
+    </div>
+    
+  </div>
+
+  <h2 id="ph"><b>PropHunt</b></h2>
+
+  <div class="w3-panel w3-light-grey w3-padding-16 w3-card">
+
+    <h3 id="ph-map"><b>Maps / マップ</b></h3>
+    <b>・Caribban Bandit</b><br>
+    <b>・Manaria Library</b><br>
+    <b>・Nature Reserve</b><br>
+    <b>・Old Apartment</b><br>
+    
+  </div>
+
+  <h2 id="qc"><b>QuakeCraft</b></h2>
+
+  <div class="w3-panel w3-light-grey w3-padding-16 w3-card">
+
+    <h3 id="qc-map"><b>Maps / マップ</b></h3>
+    <b>・Apex</b><br>
+    <b>・Chinatown</b><br>
+    <b>・ColdWar</b><br>
+    <b>・Demonic</b><br>
+    <b>・HustWood</b><br>
+    <b>・LostWorld</b><br>
+    <b>・Midget</b><br>
+    <b>・Mines</b><br>
+    <b>・Sero</b><br>
+    <b>・Temple</b><br>
+
+    <h3 id="qc-railgun"><b>RailGun / レールガン</b></h3>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・RG-01</b><br>
+    CT: 2秒<br>
+    Particle: Happy Villager<br>
+    0 クラシックゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・RG-02</b><br>
+    CT: 1.9秒<br>
+    Particle: Happy Villager<br>
+    50000 クラシックゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・RG-03</b><br>
+    CT: 1.8秒<br>
+    Particle: Happy Villager<br>
+    75000 クラシックゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・RG-04</b><br>
+    CT: 1.7秒<br>
+    Particle: Happy Villager<br>
+    120000 クラシックゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・RG-05</b><br>
+    CT: 1.6秒<br>
+    Particle: Happy Villager<br>
+    200000 クラシックゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・RG-01P</b><br>
+    CT: 3秒<br>
+    Particle: Redstone<br>
+    弾は敵を撃ち抜いても貫通する。<br>
+    100000 クラシックゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・RG-02P</b><br>
+    CT: 2.9秒<br>
+    Particle: Redstone<br>
+    弾は敵を撃ち抜いても貫通する。<br>
+    200000 クラシックゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・RG-03P</b><br>
+    CT: 2.8秒<br>
+    Particle: Redstone<br>
+    弾は敵を撃ち抜いても貫通する。<br>
+    300000 クラシックゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・RG-04P</b><br>
+    CT: 2.7秒<br>
+    Particle: Redstone<br>
+    弾は敵を撃ち抜いても貫通する。<br>
+    400000 クラシックゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・RG-05P</b><br>
+    CT: 2.6秒<br>
+    Particle: Redstone<br>
+    弾は敵を撃ち抜いても貫通する。<br>
+    500000 クラシックゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・RG-05R</b><br>
+    CT: 3.5秒<br>
+    Particle: Witch Spell<br>
+    敵に当たった時にその周囲3m以内の敵を倒す。<br>
+    800000 クラシックゲームコイン<br>
+    </div>
+    
+  </div>
+
+  <h2 id="sp"><b>Splegg</b></h2>
+
+  <div class="w3-panel w3-light-grey w3-padding-16 w3-card">
+
+    <h3 id="sp-map"><b>Maps / マップ</b></h3>
+    <b>・Blade</b><br>
+    <b>・Flower</b><br>
+    <b>・Space</b><br>
+    <b>・Spider</b><br>
+    <b>・Various</b><br>
+    
+  </div>
+
+  <h2 id="sp"><b>Sumo</b></h2>
+
+  <div class="w3-panel w3-light-grey w3-padding-16 w3-card">
+
+    <h3 id="su-vscom"><b>vs Computer Maps / vs Computer マップ</b></h3>
+    <b>・Arles</b><br>
+    <b>・End</b><br>
+    <b>・Inzelt</b><br>
+    <b>・Jaula</b><br>
+    <b>・Mine</b><br>
+    <b>・Skylands</b><br>
+    <b>・What Happened!?</b><br>
+
+    <h3 id="su-vshu"><b>1vs1 Maps / 1vs1 マップ</b></h3>
+    <b>・Arena</b><br>
+    <b>・Arles</b><br>
+    <b>・Avortement</b><br>
+    <b>・End</b><br>
+    <b>・Inzelt</b><br>
+    <b>・Jaula</b><br>
+    <b>・KoraKora Paradise</b><br>
+    <b>・Mine</b><br>
+    <b>・NightCode</b><br>
+    <b>・Requiem</b><br>
+    <b>・silent</b><br>
+    <b>・Skylands</b><br>
+    <b>・TheGoldenAX</b><br>
+    <b>・TrialChambers</b><br>
+    <b>・What Happened!?</b><br>
+    
+  </div>
+
+  <h2 id="sj"><b>SuperJump</b></h2>
+
+  <div class="w3-panel w3-light-grey w3-padding-16 w3-card">
+
+    <h3 id="sj-map"><b>Maps / マップ</b></h3>
+    <b>・Flameruins</b><br>
+    <b>・GoldMine</b><br>
+    <b>・Ice</b><br>
+    <b>・Mineshaft</b><br>
+    <b>・Mysterious</b><br>
+    <b>・MysteryTower</b><br>
+    <b>・Office</b><br>
+    <b>・PixelCave</b><br>
+    <b>・Quarry</b><br>
+    <b>・Roock</b><br>
+    <b>・Subway</b><br>
+    <b>・Temple</b><br>
+    <b>・The Rambles</b><br>
+    <b>・Tiny</b><br>
+    
+  </div>
+
+  <h2 id="sg"><b>SurvivalGames</b></h2>
+
+  <div class="w3-panel w3-light-grey w3-padding-16 w3-card">
+
+    <h3 id="sg-map"><b>Maps / マップ</b></h3>
+    <b>・BreezeIsland</b><br>
+    <b>・Desert</b><br>
+    <b>・LostVillage</b><br>
+    <b>・Ruin</b><br>
+    <b>・Tropical</b><br>
+    <b>・Vanitas</b><br>
+    <b>・Venice</b><br>
+    
+  </div>
+
+  <h2 id="tb"><b>TheBridge</b></h2>
+
+  <div class="w3-panel w3-light-grey w3-padding-16 w3-card">
+
+    <h3 id="tb-1vs1map"><b>1vs1 , Reset 1vs1 Maps / 1vs1 , Reset 1vs1 マップ</b></h3>
+    <b>・Dragon</b><br>
+    <b>・FlowerPot</b><br>
+    <b>・Lotus</b><br>
+    <b>・Mine</b><br>
+    <b>・Mirror</b><br>
+    <b>・Pianotic</b><br>
+    <b>・Skyreach</b><br>
+
+    <h3 id="tb-1vs1vs1map"><b>1vs1vs1vs1 Maps / 1vs1vs1vs1 マップ</b></h3>
+    <b>・Dragon</b><br>
+    <b>・FlowerPot</b><br>
+    <b>・Lotus</b><br>
+    <b>・Mine</b><br>
+    <b>・Mirror</b><br>
+    
+  </div>
+
+  <h2 id="tr"><b>TNTRun</b></h2>
+
+  <div class="w3-panel w3-light-grey w3-padding-16 w3-card">
+
+    <h3 id="tr-map"><b>Maps / マップ</b></h3>
+    <b>・Colosseum</b><br>
+    <b>・Houses</b><br>
+    <b>・StartingEyes</b><br>
+    <b>・Torre</b><br>
+    
+    <h3 id="tr-double"><b>Double Jump / ダブルジャンプ</b></h3>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・ダブルジャンプ(1回分)</b><br>
+    10000 アーケードゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・ダブルジャンプ(1回分)</b><br>
+    35000 アーケードゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・ダブルジャンプ(1回分)</b><br>
+    40000 アーケードゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・ダブルジャンプ(1回分)</b><br>
+    45000 アーケードゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・ダブルジャンプ(1回分)</b><br>
+    50000 アーケードゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・ダブルジャンプ(1回分)</b><br>
+    55000 アーケードゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・ダブルジャンプ(1回分)</b><br>
+    60000 アーケードゲームコイン<br>
+    </div>
+
+    <h3 id="tr-slowness"><b>Slowness SplashPotion / 鈍化のスプラッシュポーション</b></h3>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・鈍化</b><br>
+    50000 アーケードゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・鈍化</b><br>
+    80000 アーケードゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・鈍化</b><br>
+    100000 アーケードゲームコイン<br>
+    </div>
+
+    <h3 id="tr-speed"><b>Speed SplashPotion / 俊敏のスプラッシュポーション</b></h3>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・スピード</b><br>
+    10000 アーケードゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・スピード</b><br>
+    35000 アーケードゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・スピード</b><br>
+    70000 アーケードゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・スピード</b><br>
+    100000 アーケードゲームコイン<br>
+    </div>
+
+    <h3 id="tr-particle"><b>Particles / パーティクル</b></h3>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・青い炎</b><br>
+    150000 アーケードゲームコイン
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・エンチャント</b><br>
+    70000 アーケードゲームコイン
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・エンドロッド</b><br>
+    120000 アーケードゲームコイン
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・うきうきな村人</b><br>
+    150000 アーケードゲームコイン
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・ハート</b><br>
+    100000 アーケードゲームコイン
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・赤い炎</b><br>
+    80000 アーケードゲームコイン
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・線香花火</b><br>
+    300000 アーケードゲームコイン
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・ウィッチ</b><br>
+    200000 アーケードゲームコイン
+    </div>
+
+  </div>
+
+  <h2 id="tt"><b>TNTTag</b></h2>
+
+  <div class="w3-panel w3-light-grey w3-padding-16 w3-card">
+
+    <h3 id="tt-map"><b>Maps / マップ</b></h3>
+    <b>・Caribban Bandit</b><br>
+    <b>・Casino</b><br>
+    <b>・Chinatown</b><br>
+    <b>・Desert</b><br>
+    <b>・Dinossaur</b><br>
+    <b>・Inzelt</b><br>
+    <b>・Jyosco ElementX店</b><br>
+    <b>・Nether</b><br>
+    <b>・NightCode</b><br>
+    <b>・Skylands</b><br>
+    <b>・Wustedt</b><br>
+
+    <h3 id="tt-exres"><b>Explosion Resistant / 爆発耐性</b></h3>
+    
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・爆発耐性（+3）</b><br>
+    5000 アーケードゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・爆発耐性（+3）</b><br>
+    7500 アーケードゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・爆発耐性（+3）</b><br>
+    10000 アーケードゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・爆発耐性（+3）</b><br>
+    20000 アーケードゲームコイン<br>
+    </div>
+    <div style="margin-left: 1em; text-indent: -1.5em;">
+    <b>・爆発耐性（+3）</b><br>
+    40000 アーケードゲームコイン<br>
+    </div>
+    
+  </div>
+  
+</div>
+
+</div>
+     
+</div>
+
+<script>
+// Open and close the sidebar on medium and small screens
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Change style of top container on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {
+  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    document.getElementById("myTop").classList.add("w3-card-4", "w3-animate-opacity");
+    document.getElementById("myIntro").classList.add("w3-show-inline-block");
+  } else {
+    document.getElementById("myIntro").classList.remove("w3-show-inline-block");
+    document.getElementById("myTop").classList.remove("w3-card-4", "w3-animate-opacity");
+  }
+}
+
+// Accordions
+function myAccordion(id) {
+  var x = document.getElementById(id);
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+    x.previousElementSibling.className += " w3-theme";
+  } else { 
+    x.className = x.className.replace("w3-show", "");
+    x.previousElementSibling.className = 
+    x.previousElementSibling.className.replace(" w3-theme", "");
+  }
+}
+</script>
+     
+</body>
+</html> 
