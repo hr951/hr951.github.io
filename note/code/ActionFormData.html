@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+<title>ActionFormData | ScriptAPI</title>
+
+<link rel="shortcut icon" href="https://github.com/hr951/hr951.github.io/blob/main/image/favicon.ico">
+<link rel="apple-touch-icon" href="https://github.com/hr951/hr951.github.io/blob/main/image/apple-touch-icon.png">
+<link rel="icon" type="image/png"
+    href="https://github.com/hr951/hr951.github.io/blob/main/image/android-chrome-256x256.png">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+<style>
+    body {
+        font-family: "Roboto", sans-serif
+    }
+
+    pre {
+        background: #111;
+        color: #eee;
+        padding: 16px;
+        overflow-x: auto;
+    }
+
+    code {
+        color: #4dd0e1;
+    }
+
+    .w3-bar-block .w3-bar-item {
+        padding: 16px;
+        font-weight: bold;
+    }
+</style>
+
+<body>
+
+    <!-- Sidebar -->
+    <nav class="w3-sidebar w3-bar-block w3-collapse w3-card" style="z-index:3;width:250px;" id="mySidebar">
+        <a class="w3-bar-item w3-button w3-border-bottom w3-large"
+            href="https://hr951.github.io/note/index">ScriptAPI</a>
+
+        <a class="w3-bar-item w3-button w3-teal" href="#">ActionFormData</a>
+        <a class="w3-bar-item w3-button" href="#details">詳細 / Details</a>
+        <a class="w3-bar-item w3-button" href="#sample">Sample Code</a>
+        <a class="w3-bar-item w3-button" href="#tips">Tips</a>
+    </nav>
+
+    <div class="w3-main" style="margin-left:250px">
+
+        <div class="w3-container" style="padding:32px">
+            <h1 class="w3-xxxlarge w3-text-teal"><b>ActionFormData</b></h1>
+            <hr style="width:50px;border:5px solid teal" class="w3-round">
+
+            <!-- Details -->
+            <h2 id="details">詳細 / Details</h2>
+
+            <div class="w3-panel w3-light-grey w3-padding-16 w3-card">
+                <h3>概要</h3>
+                <p>
+                    <b>ActionFormData</b> は Minecraft 統合版 ScriptAPI
+                    (<code>@minecraft/server-ui</code>) で使える
+                    <b>選択式UIフォーム</b> です。
+                </p>
+
+                <ul>
+                    <li>メニューUI</li>
+                    <li>ワープ先選択</li>
+                    <li>簡易設定画面</li>
+                </ul>
+                <h3>基本構造</h3>
+                <pre><code>import { ActionFormData } from "@minecraft/server-ui";
+
+const form = new ActionFormData();</code></pre>
+                <h3>設定できる要素</h3>
+
+                <h4>タイトル</h4>
+                <pre><code>form.title("メインメニュー");</code></pre>
+
+                <h4>本文</h4>
+                <pre><code>form.body("やりたい操作を選んでください");
+form.body("1行目\n2行目");</code></pre>
+
+                <h4>ボタン</h4>
+                <pre><code>form.button("ショップ");
+form.button("ワープ", "textures/ui/worldsIcon");
+// ボタンの左にアイコンが付きます</code></pre>
+            </div>
+
+            <!-- Sample -->
+            <h2 id="sample">Sample Code</h2>
+
+            <div class="w3-panel w3-light-grey w3-padding-16 w3-card">
+                <pre><code>import { world } from "@minecraft/server";
+import { ActionFormData } from "@minecraft/server-ui";
+
+world.beforeEvents.chatSend.subscribe(ev => {
+  if (ev.message !== "menu") return;
+  ev.cancel = true;
+
+  const player = ev.sender;
+
+  const form = new ActionFormData()
+    .title("メニュー")
+    .body("選択してください")
+    .button("回復")
+    .button("スポーンへ戻る", "textures/items/ender_pearl");
+
+  form.show(player).then(res => {
+    if (res.canceled) return;
+    // 必ず確認
+
+    if (res.selection === 0) {
+      player.runCommand("effect @s regeneration 5 1 true");
+    } else if (res.selection === 1) {
+      player.runCommand("tp @s 0 0 0");
+    }
+  });
+});</code></pre>
+            </div>
+
+            <!-- Tips -->
+            <h2 id="tips">Tips</h2>
+
+            <div class="w3-panel w3-light-grey w3-padding-16 w3-card">
+                <ul>
+                    <li>ボタン順と <code>selection</code> は 0 始まり</li>
+                    <li><code>res.canceled</code> は必ずチェック</li>
+                    <li>分岐が増えたら配列 or 関数化がおすすめ</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
