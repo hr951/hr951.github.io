@@ -37,8 +37,8 @@ async function loadWords() {
 async function start() {
     await loadWords();
 
-    const start = Number(startIndexInput.value) - 1;
-    const end = Number(endIndexInput.value) - 1;
+    const start = Number(startIndexInput.value);
+    const end = Number(endIndexInput.value);
     delaySec = Number(delayInput.value);
 
     if (start > end) {
@@ -46,12 +46,17 @@ async function start() {
         return;
     }
 
-    words = Object.entries(wordsData).map(([word, mean], i) => ({
+    // 全単語に番号を付ける
+    const allWords = Object.entries(wordsData).map(([word, mean], i) => ({
         no: i + 1,
         word,
         mean
-    })).slice(start, end + 1);
+    }));
 
+    // 指定範囲抽出
+    words = allWords.slice(start - 1, end);
+
+    // 範囲内シャッフル
     order = shuffle([...words]);
     index = 0;
 
