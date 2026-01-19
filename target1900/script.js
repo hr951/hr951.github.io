@@ -1,64 +1,73 @@
-let wordsData = {};
-let words = [];
-let order = [];
+let wordsData = null; // データを保持
+let words = [];       // 範囲絞り込み後のリスト
+let order = [];       // シャッフル後のリスト
 let index = 0;
-let delaySec = 3;
+let delaySec = 2;
 let timer = null;
 let progressTimer = null;
 
-// DOM
 const setup = document.getElementById("setup");
 const study = document.getElementById("study");
 const wordIndex = document.getElementById("wordIndex");
 const word = document.getElementById("word");
 const mean = document.getElementById("mean");
 const progressBar = document.getElementById("progressBar");
-
 const startIndexInput = document.getElementById("startIndex");
 const endIndexInput = document.getElementById("endIndex");
 const delayInput = document.getElementById("delay");
 
-document.getElementById("startBtn").onclick = start;
-document.getElementById("prevBtn").onclick = prev;
-document.getElementById("nextBtn").onclick = next;
-
-// LoadJSON
-async function loadWords() {
-    const res = await fetch("https://raw.githubusercontent.com/hr951/hr951.github.io/refs/heads/main/target1900/words_en_ja.json");
-    wordsData = await res.json();
-
-    const len = Object.keys(wordsData).length;
-    startIndexInput.max = len;
-    endIndexInput.max = len;
-    endIndexInput.value = len;
+// 起動時にデータを1回だけロード
+async function init() {
+    try {
+        const res = await fetch("https://raw.githubusercontent.com/hr951/hr951.github.io/refs/heads/main/target1900/words_en_ja.json");
+        wordsData = await res.json();
+        const maxLen = Object.keys(wordsData).length;
+        startIndexInput.max = maxLen;
+        endIndexInput.max = maxLen;
+        endIndexInput.value = maxLen;
+    } catch (e) {
+        alert("データの読み込みに失敗しました");
+    }
 }
+init();
 
-// Start
 async function start() {
-    await loadWords();
+    if (!wordsData) return;
 
-    const startNo = Number(startIndexInput.value);
-    const endNo = Number(endIndexInput.value);
-    delaySec = Number(delayInput.value);
+    const startNo = parseInt(startIndexInput.value);
+    const endNo = parseInt(endIndexInput.value);
+    delaySec = parseFloat(delayInput.value);
 
-    if (startNo > endNo) {
-        alert("開始番号は終了番号以下にしてください");
+    // --- バリデーション ---
+    if (isNaN(startNo) || isNaN(endNo) || isNaN(delaySec)) {
+        alert("数値を入力してください");
         return;
     }
+    if (startNo < 1 || endNo < 1) {
+        alert("1以上の番号を指定してください");
+        return;
+    }
+    if (startNo > endNo) {
+        alert("開始番号は終了番号以下にしてください（ex: 1 〜 100）");
+        return;
+    }
+    // ----------------------
 
-    // 全単語に番号付け
-    const allWords = Object.entries(wordsData).map(([word, mean], i) => ({
+    // 全単語を配列化
+    const allWords = Object.entries(wordsData).map(([w, m], i) => ({
         no: i + 1,
-        word,
-        mean
+        word: w,
+        mean: m
     }));
 
     // 指定範囲のみ抽出
-    words = allWords.filter(
-        w => w.no >= startNo && w.no <= endNo
-    );
+    words = allWords.filter(w => w.no >= startNo && w.no <= endNo);
 
-    // 範囲内のみシャッフル
+    if (words.length === 0) {
+        alert("指定された範囲に単語が見つかりませんでした");
+        return;
+    }
+
     order = shuffle([...words]);
     index = 0;
 
@@ -68,43 +77,42 @@ async function start() {
     showWord();
 }
 
-// Show
 function showWord() {
     clearTimers();
 
     const item = order[index];
-    wordIndex.textContent = `${item.no}`;
+    wordIndex.textContent = `No. ${item.no}`;
     word.textContent = item.word;
     mean.textContent = item.mean;
-    mean.style.visibility = "hidden";
+    mean.style.visibility = "hidden"; // 隠す
 
     startProgress();
 }
 
-// ProgressBar
 function startProgress() {
     let remaining = delaySec * 1000;
     const total = remaining;
+    const step = 50;
 
     progressBar.style.width = "100%";
 
     progressTimer = setInterval(() => {
-        remaining -= 50;
-        progressBar.style.width = (remaining / total * 100) + "%";
-    }, 50);
+        remaining -= step;
+        const percent = Math.max(0, (remaining / total) * 100);
+        progressBar.style.width = percent + "%";
 
-    timer = setTimeout(() => {
-        mean.style.visibility = "visible";
-        clearInterval(progressTimer);
-        progressBar.style.width = "0%";
-    }, delaySec * 1000);
+        if (remaining <= 0) {
+            clearInterval(progressTimer);
+            mean.style.visibility = "visible"; // 意味を表示
+        }
+    }, step);
 }
 
-// Button
 function next() {
     index++;
     if (index >= order.length) {
-        order = shuffle([...order]); // 1周後に再シャッフル
+        alert("範囲内の単語をすべて学習しました。再シャッフルします。");
+        order = shuffle([...words]);
         index = 0;
     }
     showWord();
@@ -116,8 +124,6 @@ function prev() {
     showWord();
 }
 
-
-// Shuffle
 function shuffle(arr) {
     for (let i = arr.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -130,3 +136,13 @@ function clearTimers() {
     clearTimeout(timer);
     clearInterval(progressTimer);
 }
+
+// イベント
+document.getElementById("startBtn").onclick = start;
+document.getElementById("prevBtn").onclick = prev;
+document.getElementById("nextBtn").onclick = next;
+document.getElementById("backBtn").onclick = () => {
+    clearTimers();
+    study.style.display = "none";
+    setup.style.display = "block";
+};
