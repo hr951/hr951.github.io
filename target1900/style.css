@@ -1,88 +1,118 @@
 body {
     margin: 0;
-    font-family: sans-serif;
-    background: #f4f4f4;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: #f0f2f5;
     height: 100vh;
-
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; から変更。上からの位置を固定 */
+    align-items: flex-start;
+    padding-top: 40px;
+    box-sizing: border-box;
 }
 
 #app {
-    width: 100%;
-    max-width: 420px;
+    width: 90%;
+    max-width: 400px;
     background: white;
-    padding: 24px;
-    border-radius: 16px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;   /* ← 縦中央 */
-    align-items: center;       /* ← 横中央 */
+    padding: 30px 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
-/* ---------- 単語ブロック ---------- */
 .word-area {
-    min-height: 160px; /* ← 意味の有無で動かない */
+    min-height: 220px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start; /* centerから変更：上揃えにする */
+    align-items: center;
+    padding-top: 40px;
+    box-sizing: border-box;
 }
 
 #wordIndex {
-    color: #888;
+    color: #999;
     font-size: 14px;
+    margin-bottom: 5px;
 }
 
 #word {
-    font-size: 36px;
-    margin: 12px 0;
+    font-size: 38px;
+    font-weight: bold;
+    margin: 0;
+    line-height: 1.2;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #mean {
-    font-size: 22px;
-    color: red;
-    margin-top: 8px;
+    font-size: 20px;
+    color: #e53935;
+    margin-top: 25px;
+    width: 100%;
+    word-break: break-all;
+    line-height: 1.4;
     visibility: hidden;
 }
 
-/* ---------- プログレスバー ---------- */
+/* プログレスバー */
 .progress {
     width: 100%;
-    height: 10px;
-    background: #ddd;
-    border-radius: 5px;
+    height: 8px;
+    background: #eee;
+    border-radius: 4px;
     overflow: hidden;
-    margin: 20px 0; /* ← 意味と距離を固定 */
+    margin: 25px 0;
 }
 
 .progress-bar {
     height: 100%;
     width: 100%;
     background: #4caf50;
+    transition: width 0.05s linear;
 }
 
-/* ---------- ボタン ---------- */
+/* ボタン */
 .mobile-controls {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
-    margin-top: 20px;
 }
 
 .nav-btn {
-    width: 72px;
-    height: 72px;
-    font-size: 32px;
+    width: 80px;
+    height: 80px;
+    font-size: 28px;
     border-radius: 50%;
     border: none;
     background: #4caf50;
     color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3);
 }
 
 .nav-btn:active {
-    transform: scale(0.95);
+    transform: scale(0.92);
+}
+
+input[type="number"] {
+    padding: 8px;
+    width: 80px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+#startBtn {
+    padding: 12px 40px;
+    font-size: 18px;
+    background: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 20px;
 }
