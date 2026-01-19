@@ -1,258 +1,45 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
-    <meta charset="UTF-8">
-    <title>英単語練習</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        body {
-            margin: 0;
-            font-family: sans-serif;
-            background: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        #app {
-            width: 90%;
-            max-width: 500px;
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        #word {
-            font-size: 32px;
-            margin: 20px 0;
-        }
-
-        #mean {
-            font-size: 20px;
-            color: red;
-            margin: 10px 0;
-            visibility: hidden;
-        }
-
-        .progress {
-            width: 100%;
-            height: 10px;
-            background: #ddd;
-            border-radius: 5px;
-            overflow: hidden;
-            margin: 10px 0;
-        }
-
-        .progress-bar {
-            height: 100%;
-            width: 100%;
-            background: #4caf50;
-        }
-
-        .controls {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-
-        .mobile-controls {
-            position: fixed;
-            bottom: 20px;
-            left: 0;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            padding: 0 20px;
-            box-sizing: border-box;
-        }
-
-        .nav-btn {
-            width: 70px;
-            height: 70px;
-            font-size: 32px;
-            border-radius: 50%;
-            border: none;
-            background: #4caf50;
-            color: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            touch-action: manipulation;
-        }
-
-        .nav-btn:active {
-            transform: scale(0.95);
-            background: #43a047;
-        }
-
-
-        button {
-            font-size: 20px;
-            padding: 10px 20px;
-        }
-
-        #setup input {
-            width: 80px;
-        }
-
-        @media (max-width: 600px) {
-            #word {
-                font-size: 36px;
-            }
-
-            #mean {
-                font-size: 22px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<title>ターゲット1900</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <div id="app">
-        <!-- 開始設定 -->
-        <div id="setup">
-            <p>
-                範囲：
-                <input type="number" id="startIndex" value="1" min="1" max="1900"> ～
-                <input type="number" id="endIndex" value="1900" min="1" max="1900">
-            </p>
-            <p>
-                意味表示までの秒数：
-                <input type="number" id="delay" value="3" min="1">
-            </p>
-            <button onclick="start()">開始</button>
-        </div>
-
-        <!-- 学習画面 -->
-        <div id="study" style="display:none;">
-            <div id="word"></div>
-            <div id="mean"></div>
-
-            <div class="progress">
-                <div class="progress-bar" id="progressBar"></div>
-            </div>
-
-            <div class="controls">
-                <button onclick="prev()">⬅</button>
-                <button onclick="next()">➡</button>
-            </div>
-
-            <div class="mobile-controls">
-                <button class="nav-btn left" onclick="prev()">◀</button>
-                <button class="nav-btn right" onclick="next()">▶</button>
-            </div>
-
-        </div>
+<div id="app">
+    <!-- 設定UI -->
+    <div id="setup">
+        <p>
+            範囲：
+            <input type="number" id="startIndex" min="1" value="1" max="1900"> ～
+            <input type="number" id="endIndex" min="1" value="1900" max="1900">
+        </p>
+        <p>
+            意味表示までの秒数：
+            <input type="number" id="delay" value="1" min="1">
+        </p>
+        <button id="startBtn">開始</button>
     </div>
 
-    <script>
-        let wordsData = {};
-        let words = [];
-        let order = [];
-        let index = 0;
-        let delaySec = 3;
-        let timer = null;
-        let progressTimer = null;
+    <!-- UI -->
+    <div id="study" style="display:none;">
+        <div id="wordIndex"></div>
+        <div id="word"></div>
+        <div id="mean"></div>
 
-        // JSON読み込み
-        async function loadWords() {
-            const res = await fetch("https://raw.githubusercontent.com/hr951/hr951.github.io/refs/heads/main/target1900/words_en_ja.json");
-            wordsData = await res.json();
+        <div class="progress">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
 
-            const len = Object.keys(wordsData).length;
+        <div class="mobile-controls">
+            <button class="nav-btn left" id="prevBtn">◀</button>
+            <button class="nav-btn right" id="nextBtn">▶</button>
+        </div>
+    </div>
+</div>
 
-            startIndex.max = len;
-            endIndex.max = len;
-            endIndex.value = len; // デフォルトで最後まで
-        }
-
-        // 開始処理
-        async function start() {
-            await loadWords();
-
-            const start = Number(startIndex.value) - 1;
-            const end = Number(endIndex.value) - 1;
-            delaySec = Number(delay.value);
-
-            if (start > end) {
-                alert("開始番号は終了番号以下にしてください");
-                return;
-            }
-
-
-            words = Object.entries(wordsData).slice(start, end + 1);
-
-            order = shuffle([...words]);
-            index = 0;
-
-            setup.style.display = "none";
-            study.style.display = "block";
-
-            showWord();
-        }
-
-        function showWord() {
-            clearTimers();
-
-            const [w, m] = order[index];
-            word.textContent = w;
-            mean.textContent = m;
-            mean.style.visibility = "hidden";
-
-            startProgress();
-        }
-
-        function startProgress() {
-            let remaining = delaySec * 1000;
-            const total = remaining;
-
-            progressBar.style.width = "100%";
-
-            progressTimer = setInterval(() => {
-                remaining -= 50;
-                progressBar.style.width = (remaining / total * 100) + "%";
-            }, 50);
-
-            timer = setTimeout(() => {
-                mean.style.visibility = "visible";
-                clearInterval(progressTimer);
-                progressBar.style.width = "0%";
-            }, delaySec * 1000);
-        }
-
-        function next() {
-            index++;
-            if (index >= order.length) {
-                // 2周目用に再シャッフル
-                order = shuffle([...order]);
-                index = 0;
-            }
-            showWord();
-        }
-
-        function prev() {
-            index--;
-            if (index < 0) index = order.length - 1;
-            showWord();
-        }
-
-        function shuffle(arr) {
-            for (let i = arr.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [arr[i], arr[j]] = [arr[j], arr[i]];
-            }
-            return arr;
-        }
-
-        function clearTimers() {
-            clearTimeout(timer);
-            clearInterval(progressTimer);
-        }
-    </script>
-
+<script src="script.js"></script>
 </body>
-
 </html>
