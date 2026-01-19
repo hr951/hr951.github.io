@@ -22,9 +22,9 @@ document.getElementById("startBtn").onclick = start;
 document.getElementById("prevBtn").onclick = prev;
 document.getElementById("nextBtn").onclick = next;
 
-// JSON読み込み
+// LoadJSON
 async function loadWords() {
-    const res = await fetch("words.json");
+    const res = await fetch("https://raw.githubusercontent.com/hr951/hr951.github.io/refs/heads/main/target1900/words_en_ja.json");
     wordsData = await res.json();
 
     const len = Object.keys(wordsData).length;
@@ -33,7 +33,7 @@ async function loadWords() {
     endIndexInput.value = len;
 }
 
-// 開始
+// Start
 async function start() {
     await loadWords();
 
@@ -61,7 +61,7 @@ async function start() {
     showWord();
 }
 
-// 表示
+// Show
 function showWord() {
     clearTimers();
 
@@ -74,7 +74,7 @@ function showWord() {
     startProgress();
 }
 
-// プログレスバー
+// ProgressBar
 function startProgress() {
     let remaining = delaySec * 1000;
     const total = remaining;
@@ -93,7 +93,7 @@ function startProgress() {
     }, delaySec * 1000);
 }
 
-// ナビ
+// Button
 function next() {
     index = (index + 1) % order.length;
     showWord();
@@ -104,6 +104,7 @@ function prev() {
     showWord();
 }
 
+// Shuffle
 function shuffle(arr) {
     for (let i = arr.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
