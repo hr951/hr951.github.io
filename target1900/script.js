@@ -100,7 +100,13 @@ function startProgress() {
 
 // Button
 function next() {
-    index = (index + 1) % order.length;
+    index++;
+
+    if (index >= order.length) {
+        // シャッフル
+        order = shuffle([...order]);
+        index = 0;
+    }
     showWord();
 }
 
