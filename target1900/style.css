@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: #f4f4f4;
+    height: 100vh;
+}
+
+#app {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    min-height: 100vh;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#wordIndex {
+    color: #888;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+#word {
+    font-size: 36px;
+    margin: 20px 0;
+}
+
+#mean {
+    font-size: 22px;
+    color: red;
+    margin: 10px 0;
+    visibility: hidden;
+}
+
+.progress {
+    width: 100%;
+    height: 10px;
+    background: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 100%;
+    background: #4caf50;
+}
+
+.mobile-controls {
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.nav-btn {
+    width: 70px;
+    height: 70px;
+    font-size: 32px;
+    border-radius: 50%;
+    border: none;
+    background: #4caf50;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.nav-btn:active {
+    transform: scale(0.95);
+    background: #43a047;
+}
