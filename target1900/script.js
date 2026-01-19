@@ -37,26 +37,28 @@ async function loadWords() {
 async function start() {
     await loadWords();
 
-    const start = Number(startIndexInput.value);
-    const end = Number(endIndexInput.value);
+    const startNo = Number(startIndexInput.value);
+    const endNo = Number(endIndexInput.value);
     delaySec = Number(delayInput.value);
 
-    if (start > end) {
+    if (startNo > endNo) {
         alert("開始番号は終了番号以下にしてください");
         return;
     }
 
-    // 全単語に番号を付ける
+    // 全単語に番号付け
     const allWords = Object.entries(wordsData).map(([word, mean], i) => ({
         no: i + 1,
         word,
         mean
     }));
 
-    // 指定範囲抽出
-    words = allWords.slice(start - 1, end);
+    // 指定範囲のみ抽出
+    words = allWords.filter(
+        w => w.no >= startNo && w.no <= endNo
+    );
 
-    // 範囲内シャッフル
+    // 範囲内のみシャッフル
     order = shuffle([...words]);
     index = 0;
 
