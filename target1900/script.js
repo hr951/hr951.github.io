@@ -103,19 +103,19 @@ function startProgress() {
 // Button
 function next() {
     index++;
-
     if (index >= order.length) {
-        // シャッフル
-        order = shuffle([...order]);
+        order = shuffle([...order]); // 1周後に再シャッフル
         index = 0;
     }
     showWord();
 }
 
 function prev() {
-    index = (index - 1 + order.length) % order.length;
+    index--;
+    if (index < 0) index = order.length - 1;
     showWord();
 }
+
 
 // Shuffle
 function shuffle(arr) {
