@@ -3,22 +3,25 @@ body {
     font-family: sans-serif;
     background: #f4f4f4;
     height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #app {
-    max-width: 500px;
-    margin: auto;
-    padding: 20px;
+    width: 100%;
+    max-width: 420px;
     background: white;
-    min-height: 100vh;
-    box-sizing: border-box;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     text-align: center;
 }
 
 #wordIndex {
     color: #888;
     font-size: 14px;
-    margin-top: 10px;
 }
 
 #word {
@@ -29,7 +32,7 @@ body {
 #mean {
     font-size: 22px;
     color: red;
-    margin: 10px 0;
+    margin: 12px 0;
     visibility: hidden;
 }
 
@@ -39,6 +42,7 @@ body {
     background: #ddd;
     border-radius: 5px;
     overflow: hidden;
+    margin: 12px 0;
 }
 
 .progress-bar {
@@ -48,28 +52,21 @@ body {
 }
 
 .mobile-controls {
-    position: fixed;
-    bottom: 20px;
-    left: 0;
-    width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 0 20px;
-    box-sizing: border-box;
+    margin-top: 20px;
 }
 
 .nav-btn {
-    width: 70px;
-    height: 70px;
+    width: 72px;
+    height: 72px;
     font-size: 32px;
     border-radius: 50%;
     border: none;
     background: #4caf50;
     color: white;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .nav-btn:active {
     transform: scale(0.95);
-    background: #43a047;
 }
