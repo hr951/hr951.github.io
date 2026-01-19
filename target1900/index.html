@@ -9,23 +9,21 @@
 </head>
 
 <body>
-
     <div id="app">
-        <!-- 設定UI -->
         <div id="setup">
+            <h3>学習設定</h3>
             <p>
-                範囲：
-                <input type="number" id="startIndex" min="1" value="1" max="1900"> ～
-                <input type="number" id="endIndex" min="1" value="1900" max="1900">
+                範囲：<br>
+                <input type="number" id="startIndex" min="1" value="1"> ～
+                <input type="number" id="endIndex" min="1" value="1900">
             </p>
             <p>
-                意味表示までの秒数：
-                <input type="number" id="delay" value="1" min="1">
+                意味表示までの秒数：<br>
+                <input type="number" id="delay" value="2" min="1"> 秒
             </p>
-            <button id="startBtn">開始</button>
+            <button id="startBtn">学習開始</button>
         </div>
 
-        <!-- UI -->
         <div id="study" style="display:none;">
             <div class="word-area">
                 <div id="wordIndex"></div>
@@ -41,9 +39,10 @@
                 <button class="nav-btn" id="prevBtn">◀</button>
                 <button class="nav-btn" id="nextBtn">▶</button>
             </div>
+            <button id="backBtn"
+                style="margin-top: 20px; background: none; border: none; color: #888; text-decoration: underline; cursor: pointer;">設定に戻る</button>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 
