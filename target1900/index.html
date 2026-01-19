@@ -116,8 +116,8 @@
         <div id="setup">
             <p>
                 範囲：
-                <input type="number" id="startIndex" value="0" min="0"> ～
-                <input type="number" id="endIndex" value="4" min="0">
+                <input type="number" id="startIndex" value="1" min="1" max="1900"> ～
+                <input type="number" id="endIndex" value="1900" min="1" max="1900">
             </p>
             <p>
                 意味表示までの秒数：
@@ -159,17 +159,29 @@
 
         // JSON読み込み
         async function loadWords() {
-            const res = await fetch("https://raw.githubusercontent.com/hr951/hr951.github.io/refs/heads/main/target1900/words_data.json");
+            const res = await fetch("https://raw.githubusercontent.com/hr951/hr951.github.io/refs/heads/main/target1900/words_en_ja.json");
             wordsData = await res.json();
+
+            const len = Object.keys(wordsData).length;
+
+            startIndex.max = len;
+            endIndex.max = len;
+            endIndex.value = len; // デフォルトで最後まで
         }
 
         // 開始処理
         async function start() {
-            await loadWords(); // ← 追加
+            await loadWords();
 
-            const start = Number(startIndex.value);
-            const end = Number(endIndex.value);
+            const start = Number(startIndex.value) - 1;
+            const end = Number(endIndex.value) - 1;
             delaySec = Number(delay.value);
+
+            if (start > end) {
+                alert("開始番号は終了番号以下にしてください");
+                return;
+            }
+
 
             words = Object.entries(wordsData).slice(start, end + 1);
 
