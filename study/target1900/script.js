@@ -47,6 +47,10 @@ async function start() {
         alert("1以上の番号を指定してください");
         return;
     }
+    if (endNo > 1900) {
+        alert("1900以下の番号を指定してください");
+        return;
+    }
     if (startNo > endNo) {
         alert("開始番号は終了番号以下にしてください（ex: 1 〜 100）");
         return;
