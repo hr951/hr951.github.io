@@ -19,7 +19,7 @@ const delayInput = document.getElementById("delay");
 // 起動時にデータを1回だけロード
 async function init() {
     try {
-        const res = await fetch("https://raw.githubusercontent.com/hr951/hr951.github.io/refs/heads/main/target1900/words_en_ja.json");
+        const res = await fetch("./words_en_ja.json");
         wordsData = await res.json();
         const maxLen = Object.keys(wordsData).length;
         startIndexInput.max = maxLen;
