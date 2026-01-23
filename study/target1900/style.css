@@ -5,7 +5,6 @@ body {
     height: 100vh;
     display: flex;
     justify-content: center;
-    /* align-items: center; から変更。上からの位置を固定 */
     align-items: flex-start;
     padding-top: 40px;
     box-sizing: border-box;
@@ -21,14 +20,42 @@ body {
     text-align: center;
 }
 
+#stat-bar {
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
 .word-area {
     min-height: 220px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* centerから変更：上揃えにする */
+    justify-content: flex-start;
     align-items: center;
     padding-top: 40px;
     box-sizing: border-box;
+}
+
+.action-btn {
+    font-weight: bold;
+}
+
+.correct {
+    background-color: #2196F3 !important;
+}
+
+/* 青 */
+.wrong {
+    background-color: #f44336 !important;
+}
+
+/* 赤 */
+.small {
+    width: 60px !important;
+    height: 60px !important;
+    background: #aaa !important;
 }
 
 #wordIndex {
@@ -75,7 +102,6 @@ body {
     transition: width 0.05s linear;
 }
 
-/* ボタン */
 .mobile-controls {
     display: flex;
     justify-content: space-around;
@@ -115,4 +141,66 @@ input[type="number"] {
     border-radius: 30px;
     cursor: pointer;
     margin-top: 20px;
+}
+
+.result-section {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    overflow: hidden;
+    border-top: 2px solid #eee;
+}
+
+.tabs {
+    display: flex;
+    margin: 10px 0;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    background: #eee;
+    cursor: pointer;
+}
+
+.tab-btn.active {
+    background: #4caf50;
+    color: white;
+}
+
+.table-wrapper {
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+th,
+td {
+    border-bottom: 1px solid #eee;
+    padding: 8px;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background: #fafafa;
+}
+
+#setup p label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 16px;
+}
+
+#reviewMode {
+    width: 20px;
+    height: 20px;
 }
