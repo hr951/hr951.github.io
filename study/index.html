@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Study Note</title>
+</head>
+
+<body>
+
+    <button id="menuBtn" class="menu-toggle" onclick="openMenu()">☰ メニュー</button>
+
+    <div id="overlay" class="overlay" onclick="closeMenu()"></div>
+
+    <nav id="sidebar">
+        <h2>科目一覧</h2>
+        <ul>
+            <li><a href="#en" onclick="closeMenu()">英語</a></li>
+            <!--
+            <li><a href="#math" onclick="closeMenu()">数学</a></li>
+            <li><a href="#ja" onclick="closeMenu()">国語</a></li>
+            <li><a href="#chem" onclick="closeMenu()">化学</a></li>
+            <li><a href="#phys" onclick="closeMenu()">物理</a></li>
+            <li><a href="#soc" onclick="closeMenu()">社会</a></li>
+            -->
+        </ul>
+    </nav>
+
+    <main>
+        <h1>勉強ノート目次</h1>
+        <section id="en" class="subject-card">
+            <h2>英語 (English)</h2>
+            <div class="link-list">
+                <a href="https://hr951.github.io/study/target1900/index">ターゲット1900</a>
+                <!--
+                <a href="#">関係代名詞</a>
+                <a href="#">英単語帳(自作)</a>
+            -->
+            </div>
+        </section>
+        <!--
+        <section id="math" class="subject-card">
+            <h2>数学 (Math)</h2>
+            <div class="link-list">
+                <a href="#">微分・積分</a>
+                <a href="#">数列の公式</a>
+                <a href="#">二次関数のグラフ</a>
+            </div>
+        </section>
+
+        <section id="chem" class="subject-card">
+            <h2>化学 (Chemistry)</h2>
+            <div class="link-list">
+                <a href="#">周期表の覚え方</a>
+                <a href="#">酸化還元反応</a>
+            </div>
+        </section>
+    -->
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

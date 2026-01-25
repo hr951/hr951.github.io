@@ -1,0 +1,148 @@
+body {
+    margin: 0;
+    display: flex;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+}
+
+/* サイドバー */
+nav {
+    width: 200px;
+    height: 100vh;
+    background-color: #2c3e50;
+    color: white;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 20px;
+    transition: 0.3s;
+    z-index: 2000;
+}
+
+nav h2 {
+    font-size: 1.2rem;
+    border-bottom: 1px solid #555;
+    padding-bottom: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav li {
+    margin: 15px 0;
+}
+
+nav a {
+    color: #ecf0f1;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #3498db;
+}
+
+/*  スマホ用メニューボタン  */
+.menu-toggle {
+    display: none;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background: #2c3e50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.menu-toggle.hidden {
+    display: none;
+}
+
+main {
+    margin-left: 240px;
+    padding: 40px;
+    flex-grow: 1;
+    transition: 0.3s;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1500;
+}
+
+.overlay.active {
+    display: block;
+}
+
+.subject-card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.subject-card h2 {
+    margin-top: 0;
+    color: #2980b9;
+    border-left: 5px solid #2980b9;
+    padding-left: 15px;
+}
+
+.link-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 10px;
+}
+
+.link-list a {
+    display: block;
+    padding: 10px;
+    background: #eee;
+    text-decoration: none;
+    color: #333;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.link-list a:hover {
+    background: #3498db;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* レスポンシブ対応（スマホで見るとき） */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .overlay {
+        display: none;
+    }
+
+    nav {
+        left: -280px;
+    }
+
+    nav.open {
+        left: 0;
+    }
+
+    main {
+        margin-left: 0;
+        padding-top: 60px;
+    }
+}
