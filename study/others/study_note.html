@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>勉強メモ - Study Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="tab-controls">
+            <div class="input-group">
+                <input type="text" id="newTabTitle" placeholder="タブ名を入力...">
+                <button class="add-btn" onclick="addTab()">追加</button>
+            </div>
+            <div class="color-palette" id="palette">
+            </div>
+        </div>
+
+        <div id="tabList" class="tab-list"></div>
+
+        <div class="editor-container">
+            <textarea id="memoEditor" placeholder="メモを入力..." oninput="saveCurrentMemo()"></textarea>
+        </div>
+
+        <div class="editor-footer">
+            状態: <span id="saveStatus" class="status-saved">保存済み</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
