@@ -1,3 +1,4 @@
+/* --- ユーザー提供のベースCSS --- */
 body {
     margin: 0;
     display: flex;
@@ -6,7 +7,6 @@ body {
     color: #333;
 }
 
-/* サイドバー */
 nav {
     width: 200px;
     height: 100vh;
@@ -18,6 +18,8 @@ nav {
     padding: 20px;
     transition: 0.3s;
     z-index: 2000;
+    overflow-y: auto;
+    /* 目次が多い時用 */
 }
 
 nav h2 {
@@ -45,7 +47,6 @@ nav a:hover {
     color: #3498db;
 }
 
-/*  スマホ用メニューボタン  */
 .menu-toggle {
     display: none;
     position: fixed;
@@ -60,15 +61,14 @@ nav a:hover {
     z-index: 1000;
 }
 
-.menu-toggle.hidden {
-    display: none;
-}
-
 main {
     margin-left: 240px;
+    /* nav(200px) + padding */
     padding: 40px;
     flex-grow: 1;
     transition: 0.3s;
+    max-width: 1000px;
+    /* 読みやすさのため */
 }
 
 .overlay {
@@ -123,14 +123,10 @@ main {
     transform: translateY(-2px);
 }
 
-/* レスポンシブ対応（スマホで見るとき） */
+/* スマホ対応 */
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
-    }
-
-    .overlay {
-        display: none;
     }
 
     nav {
@@ -143,6 +139,6 @@ main {
 
     main {
         margin-left: 0;
-        padding-top: 60px;
+        padding: 60px 15px;
     }
 }
