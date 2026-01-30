@@ -15,3 +15,7 @@ function closeMenu() {
     overlay.classList.remove('active');
     menuBtn.classList.remove('hidden'); // ボタンを再表示
 }
+
+MathJax = {
+    chtml: { displayAlign: "left", }
+};

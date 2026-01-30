@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数学 - Study Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="subject-page">
+    <button id="menuBtn" class="menu-toggle" onclick="openMenu()">☰ 目次</button>
+
+    <div id="overlay" class="overlay" onclick="closeMenu()"></div>
+
+    <nav id="sidebar" class="toc-sidebar">
+        <div class="sidebar-header">
+            <h3>数学 目次</h3>
+        </div>
+        <ul>
+            <li><a href="#symmetry" onclick="closeMenu()">対称な位置</a></li>
+            <li><a href="#trajectory" onclick="closeMenu()">軌跡</a></li>
+        </ul>
+    </nav>
+
+    <main class="content-area">
+        <section id="symmetry">
+            <h1>対称な位置</h1>
+            <div class="card">
+                <h2>軸となる解き方</h2>
+                <p style="font-size: larger;">対象の軸 \(y=ax+b\) に関して点 \(A(s,t)\) に対称な点 \(B(p,q)\) を求める<br>※\(a, b, s,
+                    t\)は与えられる、もしくは他の情報を用いて導出する</p>
+                対象の軸の垂線の傾きを求める：<br>
+                <span class="text-background">
+                    \[
+                    \frac{q-t}{p-s} = -\frac{1}{a}
+                    \]
+                </span><br><br>
+                中点が軸上にあることを確認する：<br>
+                <span class="text-background">
+                    \[
+                    a(\frac{s+p}{2})+b = \frac{t+q}{2}
+                    \]
+                </span><br><br>
+                2式を連立して解くと、点 \(B(p,q)\) が求まる<br>軸に関して対称な軸を求める場合も同様の手順で求められる
+            </div>
+        </section>
+
+        <section id="trajectory">
+            <h1>軌跡</h1>
+            <div class="card">
+                <h2>軸となる解き方</h2>
+                <p style="font-size: larger;">\(y=ax^2+bx+c\) の頂点の軌跡を求める<br>※\(a,b,c\)は与えられる、もしくは他の情報を用いて導出する</p>
+                頂点の座標を仮定する：<br>
+                <span class="text-background">
+                    \[
+                    P(X,Y)
+                    \]
+                </span><br><br>
+                与式を平方完成する：<br>
+                <span class="text-background">
+                    \[
+                    y = a\left(x + \frac{b}{2a}\right)^2 - \frac{b^2}{4a}+c
+                    \]
+                </span><br><br>
+                平方完成した式から \(X\) と \(Y\) を文字を使って表す：<br>
+                <span class="text-background">
+                    \[
+                    X = -\frac{b}{2a}, \quad Y = -\frac{b^2}{4a}+c
+                    \]
+                </span><br><br>
+                2式を連立して \(X\) と \(Y\) 以外の文字を消去すると、頂点の軌跡が求まる<br>
+                <span style="color: red; font-weight: bold;">※与式で範囲が指定されている場合、\(x\)の範囲も忘れずに考える</span>
+                <h2>例題</h2>
+                <p>放物線 \(y=x^2+(2t-10)x-4t+16, \quad (t≧0)\) の頂点の軌跡を求める</p>
+                頂点の座標を仮定する：<br>
+                <span class="text-background">
+                    \[
+                    P(X,Y)
+                    \]
+                </span><br><br>
+                与式を平方完成する：<br>
+                <span class="text-background">
+                    \[
+                    y = \lbrace x + (t-5)\rbrace^2 - t^2 +6t -9
+                    \]
+                </span><br><br>
+                平方完成した式から \(X,Y\) を文字を使って表す：<br>
+                <span class="text-background">
+                    \[
+                    X = -t+5, \quad Y = -t^2 +6t -9, \quad t≧0
+                    \]
+                </span><br><br>
+                左2式を連立して \(t\) を消去する：<br>
+                <span class="text-background">
+                    \[
+                    t = -X + 5, \quad Y = -(5-X)^2 + 6(5-X) -9
+                    \]
+                </span><br><br>
+                \(t=-X+5\) を利用して\(X\)の範囲を求める：<br>
+                <span class="text-background">
+                    \[
+                    t ≧ 0, \quad -X + 5 ≧ 0 \Rightarrow X ≦ 5
+                    \]
+                </span><br><br>
+                仮定した座標 \(X, Y\) を \(x,y\) に置き換える：<br>
+                <span class="text-background">
+                    \[
+                    y = -x^2 + 4x -4, \quad x≦5
+                    \]
+                </span><br><br>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</body>
+
+</html>
