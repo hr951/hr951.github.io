@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英語 - Study Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="subject-page">
+
+    <button id="menuBtn" class="menu-toggle" onclick="openMenu()">☰ 目次</button>
+
+    <div id="overlay" class="overlay" onclick="closeMenu()"></div>
+
+    <nav id="sidebar" class="toc-sidebar">
+        <div class="sidebar-header">
+            <h3>英語 章目次</h3>
+        </div>
+        <ul>
+            <li><a href="#conjunction" onclick="closeMenu()">接続詞</a></li>
+        </ul>
+    </nav>
+
+    <main class="content-area">
+        <section id="conjunction" class="subject-card">
+            <h1>接続詞</h1>
+            <div class="card">
+                <h2>副詞のカタマリ (副詞節)</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>用法</th>
+                            <th>意味</th>
+                        </tr>
+                    <tbody>
+                        <tr>
+                            <td>when S V</td>
+                            <td>SがVするとき</td>
+                        </tr>
+                        <tr>
+                            <td>if S V</td>
+                            <td>もしもSがVするならば</td>
+                        </tr>
+                        <tr>
+                            <td>before S V</td>
+                            <td>SがVする前に</td>
+                        </tr>
+                        <tr>
+                            <td>after S V</td>
+                            <td>SがVした後に</td>
+                        </tr>
+                        <tr>
+                            <td>because S V</td>
+                            <td>SがVするので</td>
+                        </tr>
+                        <tr>
+                            <td>unless S V</td>
+                            <td>SがVしない限り</td>
+                        </tr>
+                        <tr>
+                            <td>until S V</td>
+                            <td>SがVするまでずっと (= till S V)</td>
+                        </tr>
+                        <tr>
+                            <td>although S V</td>
+                            <td>SがVするけれども (= though S V)</td>
+                        </tr>
+                        <tr>
+                            <td>whether S V</td>
+                            <td>SがVしようとしまいと</td>
+                        </tr>
+                        <tr>
+                            <td>in that S V</td>
+                            <td>SがVするという点で</td>
+                        </tr>
+                        <tr>
+                            <td>now that S V</td>
+                            <td>今やもうSはVするので</td>
+                        </tr>
+                        <tr>
+                            <td>even if S V</td>
+                            <td>たとえSがVしたとしても</td>
+                        </tr>
+                        <tr>
+                            <td>as soon as S V</td>
+                            <td>SがVするとすぐに</td>
+                        </tr>
+                        <tr>
+                            <td>by the time S V</td>
+                            <td>SがVするまでに</td>
+                        </tr>
+                        <tr>
+                            <td>as far as S V</td>
+                            <td>SがVするという限り (距離・程度)</td>
+                        </tr>
+                        <tr>
+                            <td>as long as S V</td>
+                            <td>1. SがVする間は (時)<br>2. SがVするならば (条件)</td>
+                        </tr>
+                        <tr>
+                            <td>since S V</td>
+                            <td>1. SがVするので<br>2. SがVして以来</td>
+                        </tr>
+                        <tr>
+                            <td>while S V</td>
+                            <td>1. SがVする間に<br>2. SがVする一方で</td>
+                        </tr>
+                        <tr>
+                            <td>in case S V</td>
+                            <td>1. SがVする場合には<br>2. SがVする場合に備えて</td>
+                        </tr>
+                        <tr>
+                            <td>as S V</td>
+                            <td>1. SがVするので<br>2. SがVするとき<br>3. SがVするにつれて<br>4. SがVする (のと同じ) ように</td>
+                        </tr>
+                    </tbody>
+                    </thead>
+                </table>
+                <p style="color: red; font-weight: bold;">※時や条件を表す副詞節の中は、未来の文でも現在形を使用する</p>
+                <p>1. 時 -> when, as soon as など<br>
+                    2. 条件 -> if, unless など</p>
+                <code
+                    style="display:block; background:#f4f4f4; padding:10px; font-size: large;">I will call you <span style="color: orangered;">when I <span style="color: red; font-weight: bold;">arrive</span> at the station</span>.<br>
+                NOT: I will call you <span style="color: orangered;">when I <span style="color: red; font-weight: bold;">will arrive</span> at the station</span>.</code>
+                <hr>
+                <h2>名詞のカタマリ (名詞節)</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>用法</th>
+                            <th>意味</th>
+                        </tr>
+                    <tbody>
+                        <tr>
+                            <td>that S V</td>
+                            <td>SがVするということ</td>
+                        </tr>
+                        <tr>
+                            <td>if S V</td>
+                            <td>SがVするかどうか (ということ)</td>
+                        </tr>
+                        <tr>
+                            <td>whether S V</td>
+                            <td>SがVするかどうか (ということ)</td>
+                        </tr>
+                    </tbody>
+                    </thead>
+                </table>
+                <p style="font-size: large;">主語の位置にit (形式主語) を置く場合、名詞節は文末へ移動させる</p>
+                <code style="display:block; background:#f4f4f4; padding:10px; font-size: large;"><span style="color: red; font-weight: bold;">It</span> is important <span style="color: orangered;">that you study English every day</span>.<br>
+                = <span style="color: orangered;">That you study English every day</span> is important.</code>
+                <p style="font-size: large;">that S V の形はすべて、S・C・Oになれる</p>
+                C・Oの位置に来る場合は、基本的にthatを省略して、S Vだけで名詞節をとる
+                <code
+                    style="display:block; background:#f4f4f4; padding:10px; font-size: large;">I know <span style="color: orangered;"><span style="color: red; font-weight: bold;">(that)</span> he is a good student</span>.</code>
+                <p style="font-size: large;">if S V の形で未来を表すときは未来形をそのまま使う<br>また、基本的にOのカタマリにしかならない</p>
+                <code
+                    style="display:block; background:#f4f4f4; padding:10px; font-size: large;">I don't know <span style="color: orangered;">if he <span style="color: red; font-weight: bold;">will</span> come tomorrow</span>.</code>
+
+                <p style="font-size: large;">whether S V も形式主語をとることができる<br>また、S・C・Oになれる</p>
+                whether S V ~~ or not の形をとることも多い<br>SVが長いときは、whether or not S Vの形になる
+                <p style="font-size: large;">that を使った重要表現</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>用法</th>
+                            <th>意味</th>
+                        </tr>
+                    <tbody>
+                        <tr>
+                            <td>so 形容詞・副詞 that S V</td>
+                            <td>非常に形容詞・副詞なので、SはVする</td>
+                        </tr>
+                        <tr>
+                            <td>such 名詞 that S V</td>
+                            <td>非常に名詞なので、SはVする</td>
+                        </tr>
+                        <tr>
+                            <td>~, so (that) S V</td>
+                            <td>~なので (その結果) 、SはVする (結果)</td>
+                        </tr>
+                        <tr>
+                            <td>so (that) S 助動詞 V(原形)</td>
+                            <td>SがVするために (ように) (目的)</td>
+                        </tr>
+                        <tr>
+                            <td>in order that S may V(原形)</td>
+                            <td>SがVするために (目的)</td>
+                        </tr>
+                    </tbody>
+                    </thead>
+                </table>
+                <hr>
+                <h2>形容詞のカタマリ (形容詞節)</h2>
+                <p style="font-size: large;">主格の関係代名詞</p>
+                <ul>
+                    <li>人　　 -> who V ...</li>
+                    <li>人以外 -> which V ...</li>
+                </ul>
+                ※主格の関係代名詞のwho, whichはthatでも<span style="color: red; font-weight: bold;">代用できる</span>
+                <p style="font-size: large;">所有格の関係代名詞</p>
+                <ul>
+                    <li>人　　 -> whose 名詞</li>
+                    <li>人以外 -> whose 名詞</li>
+                </ul>
+                ※所有格の関係代名詞のwhoseはthatで<span style="color: red; font-weight: bold;">代用できない</span>
+                <p style="font-size: large;">目的格の関係代名詞</p>
+                <ul>
+                    <li>人　　 -> who(whom) S V ▲</li>
+                    <li>人以外 -> which S V ▲</li>
+                </ul>
+                ※目的格の関係代名詞のwho, whichはthatでも<span
+                    style="color: red; font-weight: bold;">代用できる</span><br>▲は名詞(代名詞)が抜け、省略されるのが基本
+                <p style="font-size: large;">前置詞の後ろの名詞 (前置詞のO) が抜けている場合</p>
+                <p><code style="display:block; background:#f4f4f4; padding:10px; font-size: large;">人 who(whom) S V <span style="color: orangered;">前置詞 ▲</span><br>
+                    = 人 <span style="color: orangered;">前置詞</span> whom S V</code>
+                    ※上段の文の場合、<span
+                        style="color: red; font-weight: bold;">who(whom)はthatで代用でき、省略も可能</span><br>下段の文の場合、<span
+                        style="color: red; font-weight: bold;">whomはthatで代用できず、省略も不可</span><br>▲は代名詞が抜けている</p>
+                <p><code style="display:block; background:#f4f4f4; padding:10px; font-size: large;">人以外 which S V <span style="color: orangered;">前置詞 ▲</span><br>
+                    = 人以外 <span style="color: orangered;">前置詞</span> which S V</code>
+                    ※上段の文の場合、<span style="color: red; font-weight: bold;">whichはthatで代用でき、省略も可能</span><br>下段の文の場合、<span
+                        style="color: red; font-weight: bold;">whichはthatで代用できず、省略も不可</span><br>▲は代名詞が抜けている</p>
+                <p style="color: red; font-weight: bold;">※look for ~ など前置詞が<span
+                        style="text-decoration: underline; font-weight: bolder;">動詞と共に使う前置詞</span>の場合は前置詞を移動できない</p>
+                <p style="font-size: large;">関係副詞</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>用法</th>
+                            <th>意味</th>
+                        </tr>
+                    <tbody>
+                        <tr>
+                            <td>where S V ~ (完全文)</td>
+                            <td>場所を表す</td>
+                        </tr>
+                        <tr>
+                            <td>when S V ~ (完全文)</td>
+                            <td>時を表す</td>
+                        </tr>
+                        <tr>
+                            <td>the reason why S V ~ (完全文)<br>the reason S V ~ (完全文)<br>why S V ~ (完全文) - 見た目は名詞節</td>
+                            <td>理由を表す</td>
+                        </tr>
+                        <tr>
+                            <td>the way S V ~ (完全文)<br>how S V ~ (完全文) - 見た目は名詞節</td>
+                            <td>方法を表す</td>
+                        </tr>
+                    </tbody>
+                    </thead>
+                </table>
+                <p style="color: red; font-weight: bold;">※the way how S Vは存在しない</p>
+                <code
+                    style="display:block; background:#f4f4f4; padding:10px; font-size: large;">This is <span style="color: orangered;">why S V ～ </span>. : こういう理由でSはVする<br>This is <span style="color: orangered;">how S V ～ </span>. : このような方法でSはVする</code>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -132,6 +132,23 @@ main {
     font-size: larger;
 }
 
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+th,
+td {
+    border-bottom: 1px solid #eee;
+    padding: 8px;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background: #fafafa;
+}
+
 /* スマホ対応 */
 @media (max-width: 768px) {
     .menu-toggle {
