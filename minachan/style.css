@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    display: flex;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+}
+
+main {
+    margin-left: 240px;
+    /* nav(200px) + padding */
+    padding: 40px;
+    flex-grow: 1;
+    transition: 0.3s;
+    max-width: 1000px;
+    /* 読みやすさのため */
+}
+
+.subject-card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.subject-card h2 {
+    margin-top: 0;
+    color: #2980b9;
+    border-left: 5px solid #2980b9;
+    padding-left: 15px;
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+    main {
+        margin-left: 0;
+        padding: 60px 15px;
+    }
+}
