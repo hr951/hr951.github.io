@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>国語(古典) - Study Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="subject-page">
+
+    <button id="menuBtn" class="menu-toggle" onclick="openMenu()">☰ 目次</button>
+
+    <div id="overlay" class="overlay" onclick="closeMenu()"></div>
+
+    <nav id="sidebar" class="toc-sidebar">
+        <div class="sidebar-header">
+            <h3>国語(古典) 目次</h3>
+        </div>
+        <ul>
+            <li><a href="#kobun" onclick="closeMenu()">1. 古文</a></li>
+            <li><a href="#kanbun" onclick="closeMenu()">2. 漢文</a></li>
+        </ul>
+    </nav>
+
+    <main class="content-area">
+        <section id="kobun" class="subject-card">
+            <h1>1. 古文</h1>
+            <div class="card">
+                <h2>係り結び</h2>
+                <p>ぞ, なむ, <span style="color: red; font-weight: bold;">や</span>, <span
+                        style="color: red; font-weight: bold;">か</span>, <span
+                        style="color: red; font-weight: bold;">こそ</span></p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>語</th>
+                            <th>接続の形</th>
+                            <th>意味</th>
+                        </tr>
+                    <tbody>
+                        <tr>
+                            <td>ぞ</td>
+                            <td>連体形</td>
+                            <td>強意（訳さない）</td>
+                        </tr>
+                        <tr>
+                            <td>なむ</td>
+                            <td>連体形</td>
+                            <td>強意（訳さない）</td>
+                        </tr>
+                        <tr>
+                            <td>や</td>
+                            <td>連体形</td>
+                            <td>疑問・反語</td>
+                        </tr>
+                        <tr>
+                            <td>か</td>
+                            <td>連体形</td>
+                            <td>疑問・反語</td>
+                        </tr>
+                        <tr>
+                            <td>こそ</td>
+                            <td>已然形</td>
+                            <td>強意（訳さない）</td>
+                        </tr>
+                    </tbody>
+                    </thead>
+                </table>
+                <hr>
+                <h2>動詞の活用</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>活用の種類</th>
+                            <th>未然形</th>
+                            <th>連用形</th>
+                            <th>終止形</th>
+                            <th>連体形</th>
+                            <th>已然形</th>
+                            <th>命令形</th>
+                            <th>特徴</th>
+                        </tr>
+                    <tbody>
+                        <tr>
+                            <td>四段活用</td>
+                            <td>ア</td>
+                            <td>イ</td>
+                            <td>ウ</td>
+                            <td>ウ</td>
+                            <td>エ</td>
+                            <td>エ</td>
+                            <td><span style="color: red; font-weight: bold;">未然形がア段</span>となる</td>
+                        </tr>
+                        <tr>
+                            <td>上一段活用</td>
+                            <td>イ</td>
+                            <td>イ</td>
+                            <td>イる</td>
+                            <td>イる</td>
+                            <td>イれ</td>
+                            <td>イよ</td>
+                            <td><span
+                                    style="color: red; font-weight: bold;">「干・射・着・似（煮）・見・居（率）る」</span>ぐらいしかないので覚える<br>「射る」は<span
+                                    style="color: red; font-weight: bold;">ヤ行</span>。「居（率）る」は<span
+                                    style="color: red; font-weight: bold;">ワ行</span>。</td>
+                        </tr>
+                        <tr>
+                            <td>下一段活用</td>
+                            <td>け</td>
+                            <td>け</td>
+                            <td>ける</td>
+                            <td>ける</td>
+                            <td>けれ</td>
+                            <td>けよ</td>
+                            <td>この活用は<span style="color: red; font-weight: bold;">「蹴る」</span>だけ</td>
+                        </tr>
+                        <tr>
+                            <td>上二段活用</td>
+                            <td>イ</td>
+                            <td>イ</td>
+                            <td>ウ</td>
+                            <td>ウる</td>
+                            <td>ウれ</td>
+                            <td>イよ</td>
+                            <td>この活用でヤ行は<span style="color: red; font-weight: bold;">「老ゆ」「悔ゆ」「報ゆ」</span>だけ</td>
+                        </tr>
+                        <tr>
+                            <td>下二段活用</td>
+                            <td>エ</td>
+                            <td>エ</td>
+                            <td>ウ</td>
+                            <td>ウる</td>
+                            <td>ウれ</td>
+                            <td>エよ</td>
+                            <td>この活用でワ行は<span style="color: red; font-weight: bold;">「植う」「飢う」「据う」</span>だけ</td>
+                        </tr>
+                        <tr>
+                            <td>カ行変格活用</td>
+                            <td>こ</td>
+                            <td>き</td>
+                            <td>く</td>
+                            <td>くる</td>
+                            <td>くれ</td>
+                            <td>こ（こよ）</td>
+                            <td><span style="color: red; font-weight: bold;">「来」</span>だけだが、<span
+                                    style="color: red; font-weight: bold;">「まうで来」「持て来」など、複合語</span>もある</td>
+                        </tr>
+                        <tr>
+                            <td>サ行変格活用</td>
+                            <td>せ</td>
+                            <td>し</td>
+                            <td>す</td>
+                            <td>する</td>
+                            <td>すれ</td>
+                            <td>せよ</td>
+                            <td>基本は<span style="color: red; font-weight: bold;">「す」「おはす」</span>だけだが、<span
+                                    style="color: red; font-weight: bold;">「漢字一字の音読み」＋「す」</span>はサ変である</td>
+                        </tr>
+                        <tr>
+                            <td>ナ行変格活用</td>
+                            <td>な</td>
+                            <td>に</td>
+                            <td>ぬ</td>
+                            <td>ぬる</td>
+                            <td>ぬれ</td>
+                            <td>ね</td>
+                            <td>この活用は<span style="color: red; font-weight: bold;">「死ぬ」「往ぬ（去ぬ）」</span>だけ</td>
+                        </tr>
+                        <tr>
+                            <td>ラ行変格活用</td>
+                            <td>ら</td>
+                            <td>り</td>
+                            <td>り</td>
+                            <td>る</td>
+                            <td>れ</td>
+                            <td>れ</td>
+                            <td>この活用は<span style="color: red; font-weight: bold;">「あり」「居り」「侍り」「いますかり（いまそかり）」</span>だけ
+                            </td>
+                        </tr>
+                    </tbody>
+                    </thead>
+                </table>
+                <hr>
+                <h2>形容詞の活用</h2>
+                <p>活用の見分けは<span style="color: red; font-weight: bold;">動詞「なる」</span>をつける<br>
+                    ➀「高くなる」のように<span style="color: red; font-weight: bold;">「～くなる」</span>なら<span
+                        style="color: red; font-weight: bold;">ク活用</span><br>
+                    ➁「美しくなる」のように<span style="color: red; font-weight: bold;">「～しくなる」</span>なら<span
+                        style="color: red; font-weight: bold;">シク活用</span><br>
+                    ※「から・かり」「しから・しかり」という<span style="color: black; font-weight: bold;">カリ系列・シカリ系列</span>は、<span
+                        style="color: red; font-weight: bold;">下に助動詞が付く</span>ときに用いられる</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>活用の種類</th>
+                            <th>未然形</th>
+                            <th>連用形</th>
+                            <th>終止形</th>
+                            <th>連体形</th>
+                            <th>已然形</th>
+                            <th>命令形</th>
+                        </tr>
+                    <tbody>
+                        <tr>
+                            <td>ク活用</td>
+                            <td>（く）<br>から</td>
+                            <td>く<br>かり</td>
+                            <td>し<br>〇</td>
+                            <td>き<br>かる</td>
+                            <td>けれ<br>〇</td>
+                            <td>〇<br>かれ</td>
+                        </tr>
+                        <tr>
+                            <td>シク活用</td>
+                            <td>（しく）<br>しから</td>
+                            <td>しく<br>しかり</td>
+                            <td>し<br>〇</td>
+                            <td>しき<br>〇</td>
+                            <td>しけれ<br>〇</td>
+                            <td>〇<br>しかれ</td>
+                        </tr>
+                    </tbody>
+                    </thead>
+                </table>
+                <hr>
+                <h2>形容動詞の活用</h2>
+                <p><span style="color: black; font-weight: bold;">「～なり」</span>は、<span
+                        style="color: red; font-weight: bold;">下に助動詞が付く</span>ときに用いられる</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>活用の種類</th>
+                            <th>未然形</th>
+                            <th>連用形</th>
+                            <th>終止形</th>
+                            <th>連体形</th>
+                            <th>已然形</th>
+                            <th>命令形</th>
+                        </tr>
+                    <tbody>
+                        <tr>
+                            <td>ナリ活用</td>
+                            <td>なら</td>
+                            <td>なり<br>に</td>
+                            <td>なり</td>
+                            <td>なる</td>
+                            <td>なれ</td>
+                            <td>なれ</td>
+                        </tr>
+                    </tbody>
+                    </thead>
+                </table>
+                <hr>
+                <h2>助動詞</h2>
+                <p><span style="color: black; font-weight: bold;">未然形接続の助動詞</span><br>
+                    <span style="color: red; font-weight: bold;">ず, る, らる, す, さす, む</span><br>
+                    <span style="color: black; font-weight: bold;">連用形接続の助動詞</span><br>
+                    <span style="color: red; font-weight: bold;">き, けり, つ, ぬ, たり</span><br>
+                    <span style="color: black; font-weight: bold;">終止形（ラ変型には連体形）接続の助動詞</span><br>
+                    <span style="color: red; font-weight: bold;">べし, らむ, めり, なり</span><br>
+                    <span style="color: black; font-weight: bold;">体言・連体形接続の助動詞</span><br>
+                    <span style="color: red; font-weight: bold;">なり</span><br>
+                    <span style="color: black; font-weight: bold;"><span
+                            style="color: dodgerblue; font-weight: bold;">サ</span>変、<span
+                            style="color: dodgerblue; font-weight: bold;">未</span>然、<span
+                            style="color: dodgerblue; font-weight: bold;">四</span>段の<span
+                            style="color: dodgerblue; font-weight: bold;">已</span>然（命令）形接続</span><br>
+                    <span style="color: red; font-weight: bold;">り</span><br>
+                    ※「なり」は終止形接続の時は<span style="color: red; font-weight: bold;">伝聞推定</span>、体言・連体形接続の時は<span
+                        style="color: red; font-weight: bold;">断定</span>の意味をもつ<br><span
+                        style="color: dodgerblue; font-weight: bold;">　サ</span>変、<span
+                        style="color: dodgerblue; font-weight: bold;">未</span>然、<span
+                        style="color: dodgerblue; font-weight: bold;">四</span>段の<span
+                        style="color: dodgerblue; font-weight: bold;">已</span>然（命令）形接続は青文字の頭文字をとって「さみしい接続」と覚える<br>
+                </p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>接続</th>
+                            <th>基本形</th>
+                            <th>未然形</th>
+                            <th>連用形</th>
+                            <th>終止形</th>
+                            <th>連体形</th>
+                            <th>已然形</th>
+                            <th>命令形</th>
+                            <th>活用型</th>
+                            <th>意味</th>
+                            <th>特徴</th>
+                        </tr>
+                    <tbody>
+                        <tr>
+                            <td>連用形</td>
+                            <td>き</td>
+                            <td>（せ）</td>
+                            <td>〇</td>
+                            <td>き</td>
+                            <td>し</td>
+                            <td>しか</td>
+                            <td>〇</td>
+                            <td>特殊型</td>
+                            <td>過去</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>連用形</td>
+                            <td>けり</td>
+                            <td>（けら）</td>
+                            <td>〇</td>
+                            <td>けり</td>
+                            <td>ける</td>
+                            <td>けれ</td>
+                            <td>〇</td>
+                            <td>ラ変型</td>
+                            <td>過去・詠嘆</td>
+                            <td>言い切りで<span style="color: red; font-weight: bold;">和歌の中、筆者や話者の感想</span>を表すとき詠嘆になる</td>
+                        </tr>
+                    </tbody>
+                    </thead>
+                </table>
+            </div>
+        </section>
+
+        <section id="kanbun" class="subject-card">
+            <h1>2. 漢文</h1>
+            <div class="card">
+                <p>Coming soon...</p>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
