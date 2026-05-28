@@ -1,0 +1,190 @@
+        :root {
+            --primary-color: #4f46e5;
+            --primary-hover: #4338ca;
+            --bg-color: #f3f4f6;
+            --stop-color: #ef4444;
+            --stop-hover: #dc2626;
+            --card-bg: #ffffff;
+            --text-color: #1f2937;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        /* --- 全停止ボタンのスタイル --- */
+        .stop-btn-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .stop-all-btn {
+            background-color: var(--stop-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: transform 0.05s ease, background-color 0.2s ease;
+            box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3);
+            -webkit-tap-highlight-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .stop-all-btn:hover {
+            background-color: var(--stop-hover);
+        }
+
+        .stop-all-btn:active {
+            transform: scale(0.95);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            /* 横幅を広げてグリッドに対応 */
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .grid-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        /* --- グリッドコンテナ（横に5ブロック並び、以降は自動改行） --- */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            /* 横に5等分 */
+            gap: 16px;
+            width: 100%;
+        }
+
+        /* 画面が狭いスマホ向けのレスポンシブ対応（必要に応じて） */
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: repeat(3, 1fr);
+                /* スマホでは横3つに */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+                /* 画面が極端に狭ければ横2つに */
+            }
+        }
+
+        /* 縦に2つで1セットにするためのペア枠 */
+        .button-pair {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .sound-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 14px 10px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.05s ease, background-color 0.2s ease;
+            box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.2);
+            -webkit-tap-highlight-color: transparent;
+            text-align: center;
+        }
+
+        .sound-btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .sound-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* --- QRコード＆吹き出しエリア --- */
+        .share-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .speech-bubble {
+            position: relative;
+            background: #10b981;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9rem;
+            padding: 8px 16px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            white-space: nowrap;
+            animation: bounce 2s infinite;
+        }
+
+        .speech-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 6px 6px 0;
+            border-style: solid;
+            border-color: #10b981 transparent;
+        }
+
+        .qr-space {
+            width: 140px;
+            height: 140px;
+            background: #e5e7eb;
+            border: 2px dashed #9ca3af;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6b7280;
+            font-size: 0.85rem;
+            text-align: center;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-4px);
+            }
+        }

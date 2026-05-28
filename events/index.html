@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音響 HUB</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="stop-btn-container">
+            <button class="stop-all-btn" onclick="stopAllSounds()">🛑 すべての音を停止</button>
+        </div>
+
+        <h2 class="grid-title">Musics</h2>
+
+        <div class="grid-container">
+
+            <div class="button-pair">
+                <button class="sound-btn" onclick="playMultiSound('TheBeastPrologue')">The Beast Prologue
+                    (序章(語り))</button>
+            </div>
+
+            <div class="button-pair">
+                <button class="sound-btn" onclick="playMultiSound('Belle-on')">朝の風景<br>(ボーカルあり)</button>
+                <button class="sound-btn" onclick="playMultiSound('Belle-off')">朝の風景<br>(ボーカルなし)</button>
+            </div>
+
+            <div class="button-pair">
+                <button class="sound-btn" onclick="playMultiSound('BeOurGuest-on')">ひとりぼっちの晩餐会<br>(ボーカルあり)</button>
+                <button class="sound-btn" onclick="playMultiSound('BeOurGuest-off')">ひとりぼっちの晩餐会<br>(ボーカルなし)</button>
+            </div>
+
+            <div class="button-pair">
+                <button class="sound-btn" onclick="playMultiSound('SomethingThere-on')">愛の芽生え<br>(ボーカルあり)</button>
+                <button class="sound-btn" onclick="playMultiSound('SomethingThere-off')">愛の芽生え<br>(ボーカルなし)</button>
+            </div>
+
+            <div class="button-pair">
+                <button class="sound-btn" onclick="playMultiSound('Gaston-on')">強いぞ、ガストン<br>(ボーカルあり)</button>
+                <button class="sound-btn" onclick="playMultiSound('Gaston-off')">強いぞ、ガストン<br>(ボーカルなし)</button>
+            </div>
+
+            <div class="button-pair">
+                <button class="sound-btn" onclick="playMultiSound('HowDoesAMomentLastForever')">How Does A Moment Last
+                    Forever</button>
+            </div>
+
+            <div class="button-pair">
+                <button class="sound-btn" onclick="playMultiSound('TheMobSong-on')">夜襲の歌<br>(ボーカルあり)</button>
+                <button class="sound-btn" onclick="playMultiSound('TheMobSong-off')">夜襲の歌<br>(ボーカルなし)</button>
+            </div>
+
+            <div class="button-pair">
+                <button class="sound-btn" onclick="playMultiSound('CurtainCall')">You Can't Stop The Beat</button>
+            </div>
+
+        </div>
+
+        <h2 class="grid-title">BGM</h2>
+
+        <div class="grid-container">
+
+            <div class="button-pair">
+                <button class="sound-btn" onclick="playMultiSound('Comical')">コミカル系</button>
+            </div>
+
+            <div class="button-pair">
+                <button class="sound-btn" onclick="playMultiSound('Combat')">戦闘</button>
+            </div>
+
+            <div class="button-pair">
+                <button class="sound-btn" onclick="playMultiSound('Unknown')">不明</button>
+            </div>
+
+            <div class="button-pair">
+                <button class="sound-btn" onclick="playMultiSound('Upbeat')">明るい音楽</button>
+            </div>
+
+            <div class="button-pair">
+                <button class="sound-btn" onclick="playMultiSound('BeautyAndTheBeast')">Beauty and the Beast</button>
+            </div>
+
+        </div>
+
+        <h2 class="grid-title">SE</h2>
+
+        <div class="grid-container">
+
+            <div class="button-pair">
+                <button class="sound-btn" onclick="playMultiSound('Horse')">馬の鳴き声</button>
+            </div>
+
+            <div class="button-pair">
+                <button class="sound-btn" onclick="playMultiSound('BeastGrowl')">野獣の唸り声</button>
+            </div>
+
+            <div class="button-pair">
+                <button class="sound-btn" onclick="playMultiSound('WolfGrowl')">狼の唸り声</button>
+            </div>
+
+            <div class="button-pair">
+                <button class="sound-btn" onclick="playMultiSound('BreakDoor')">門を壊す音</button>
+            </div>
+
+            <div class="button-pair">
+                <button class="sound-btn" onclick="playMultiSound('Burning')">あぶる音</button>
+            </div>
+
+            <div class="button-pair">
+                <button class="sound-btn" onclick="playMultiSound('AppearKnife')">ナイフを出す音</button>
+            </div>
+
+            <div class="button-pair">
+                <button class="sound-btn" onclick="playMultiSound('StabWithKnife')">ナイフで刺す音</button>
+            </div>
+
+            <div class="button-pair">
+                <button class="sound-btn" onclick="playMultiSound('Collapse')">崩れる音</button>
+            </div>
+
+        </div>
+
+        <div class="share-section">
+            <div class="speech-bubble">Share from here!</div>
+            <div class="qr-space">
+                <img src="./images/QR.png">
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Musics -->
+    <audio id="TheBeastPrologue" src="./musics/BGM/The Beast Prologue.mp3" preload="auto"></audio>
+    <audio id="Belle-on" src="./musics/BGM/Belle-on.mp3" preload="auto"></audio> <!-- まだ -->
+    <audio id="Belle-off" src="./musics/BGM/Belle-off.mp3" preload="auto"></audio> <!-- まだ -->
+    <audio id="BeOurGuest-on" src="./musics/BGM/Be Our Guest-on.mp3" preload="auto"></audio> <!-- まだ -->
+    <audio id="BeOurGuest-off" src="./musics/BGM/Off Vocal - ひとりぼっちの晩餐会.mp3" preload="auto"></audio>
+    <audio id="SomethingThere-on" src="./musics/BGM/愛の芽生え.mp3" preload="auto"></audio>
+    <audio id="SomethingThere-off" src="./musics/BGM/Belle-off.mp3" preload="auto"></audio> <!-- まだ -->
+    <audio id="Gaston-on" src="./musics/BGM/Belle-on.mp3" preload="auto"></audio> <!-- まだ -->
+    <audio id="Gaston-off" src="./musics/BGM/Belle-off.mp3" preload="auto"></audio> <!-- まだ -->
+    <audio id="HowDoesAMomentLastForever" src="./musics/BGM/How Does A Moment Last Forever.mp3" preload="auto"></audio>
+    <audio id="TheMobSong-on" src="./musics/BGM/夜襲の歌.mp3" preload="auto"></audio>
+    <audio id="TheMobSong-off" src="./musics/BGM/Belle-off.mp3" preload="auto"></audio> <!-- まだ -->
+    <audio id="CurtainCall" src="./musics/BGM/You Can't Stop The Beat.mp3" preload="auto"></audio>
+    
+    <!-- BGM -->
+    <audio id="Comical" src="./musics/BGM/Belle-on.mp3" preload="auto"></audio> <!-- まだ -->
+    <audio id="Combat" src="./musics/BGM/Belle-off.mp3" preload="auto"></audio> <!-- まだ -->
+    <audio id="Unknown" src="./musics/BGM/Belle-off.mp3" preload="auto"></audio> <!-- まだ -->
+    <audio id="Upbeat" src="./musics/BGM/Belle-on.mp3" preload="auto"></audio> <!-- まだ -->
+    <audio id="BeautyAndTheBeast" src="./musics/BGM/Beauty and the Beast.mp3" preload="auto"></audio>
+
+    <!-- SE -->
+    <audio id="Horse" src="./musics/SE/Horse.mp3" preload="auto"></audio> <!-- まだ -->
+    <audio id="BeastGrowl" src="./musics/SE/Beast Growl.mp3" preload="auto"></audio> <!-- まだ -->
+    <audio id="WolfGrowl" src="./musics/SE/Wolf Growl.mp3" preload="auto"></audio> <!-- まだ -->
+    <audio id="BreakDoor" src="./musics/SE/Break Door.mp3" preload="auto"></audio> <!-- まだ -->
+    <audio id="Burning" src="./musics/SE/Burning.mp3" preload="auto"></audio> <!-- まだ -->
+    <audio id="AppearKnife" src="./musics/SE/Appear Knife.mp3" preload="auto"></audio> <!-- まだ -->
+    <audio id="StabWithKnife" src="./musics/SE/Stab With Knife.mp3" preload="auto"></audio> <!-- まだ -->
+    <audio id="Collapse" src="./musics/SE/Collapse.mp3" preload="auto"></audio> <!-- まだ -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
