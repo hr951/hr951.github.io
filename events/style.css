@@ -14,6 +14,7 @@
             color: var(--text-color);
             margin: 0;
             padding: 20px;
+            padding-top: 90px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -24,22 +25,38 @@
 
         /* --- 全停止ボタンのスタイル --- */
         .stop-btn-container {
+            position: fixed;
+            /* 画面に対して固定配置 */
+            top: 0;
+            /* 最上部にぴったりつける */
+            left: 0;
             width: 100%;
+            background-color: rgba(243, 244, 246, 0.85);
+            /* 背景のボケに馴染むよう半透明化 */
+            backdrop-filter: blur(8px);
+            /* 背面をオシャレにぼかす */
+            -webkit-backdrop-filter: blur(8px);
+            /* Safari対策 */
+            padding: 16px 0;
             display: flex;
             justify-content: center;
+            z-index: 9999;
+            /* 他の要素より必ず前面に出す */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            /* 境界がわかりやすいよう薄い影 */
         }
 
         .stop-all-btn {
             background-color: var(--stop-color);
             color: white;
             border: none;
-            padding: 12px 30px;
+            padding: 12px 35px;
             font-size: 1rem;
             font-weight: 700;
             border-radius: 30px;
             cursor: pointer;
             transition: transform 0.05s ease, background-color 0.2s ease;
-            box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3);
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.25);
             -webkit-tap-highlight-color: transparent;
             display: flex;
             align-items: center;
