@@ -20,13 +20,17 @@
         <div class="grid-container">
 
             <div class="button-pair">
-                <button class="sound-btn" onclick="playMultiSound('TheBeastPrologue')">The Beast Prologue
-                    (序章(語り))</button>
+                <button class="sound-btn" onclick="playMultiSound('Prologue')">Prologue<br>(序章(語り))</button>
             </div>
 
             <div class="button-pair">
-                <button class="sound-btn" onclick="playMultiSound('Belle-on')">朝の風景<br>(ボーカルあり)</button>
-                <button class="sound-btn" onclick="playMultiSound('Belle-off')">朝の風景<br>(ボーカルなし)</button>
+                <button class="sound-btn" onclick="playMultiSound('Belle-on')">朝の風景_A<br>(ボーカルあり)</button>
+                <button class="sound-btn" onclick="playMultiSound('Belle-off')">朝の風景_A<br>(ボーカルなし)</button>
+            </div>
+
+            <div class="button-pair">
+                <button class="sound-btn" onclick="playMultiSound('Belle_B-on')">朝の風景_B<br>(ボーカルあり)</button>
+                <button class="sound-btn" onclick="playMultiSound('Belle_B-off')">朝の風景_B<br>(ボーカルなし)</button>
             </div>
 
             <div class="button-pair">
@@ -73,7 +77,7 @@
             </div>
 
             <div class="button-pair">
-                <button class="sound-btn" onclick="playMultiSound('Unknown')">不明</button>
+                <button class="sound-btn" onclick="playMultiSound('Transformation')">Transformation</button>
             </div>
 
             <div class="button-pair">
@@ -134,24 +138,26 @@
     </div>
 
     <!-- Musics -->
-    <audio id="TheBeastPrologue" src="./musics/BGM/The Beast Prologue.mp3" preload="auto"></audio>
+    <audio id="Prologue" src="./musics/BGM/Prologue.mp3" preload="auto"></audio>
     <audio id="Belle-on" src="./musics/BGM/Belle-on.mp3" preload="auto"></audio> <!-- まだ -->
-    <audio id="Belle-off" src="./musics/BGM/Belle-off.mp3" preload="auto"></audio> <!-- まだ -->
-    <audio id="BeOurGuest-on" src="./musics/BGM/Be Our Guest-on.mp3" preload="auto"></audio> <!-- まだ -->
+    <audio id="Belle-off" src="./musics/BGM/Off Vocal - 朝の風景_A.mp3" preload="auto"></audio>
+    <audio id="Belle_B-on" src="./musics/BGM/Belle-on.mp3" preload="auto"></audio> <!-- まだ -->
+    <audio id="Belle_B-off" src="./musics/BGM/Off Vocal - 朝の風景_B.mp3" preload="auto"></audio>
+    <audio id="BeOurGuest-on" src="./musics/BGM/On Vocal - ひとりぼっちの晩餐会.mp3" preload="auto"></audio>
     <audio id="BeOurGuest-off" src="./musics/BGM/Off Vocal - ひとりぼっちの晩餐会.mp3" preload="auto"></audio>
-    <audio id="SomethingThere-on" src="./musics/BGM/愛の芽生え.mp3" preload="auto"></audio>
-    <audio id="SomethingThere-off" src="./musics/BGM/Belle-off.mp3" preload="auto"></audio> <!-- まだ -->
-    <audio id="Gaston-on" src="./musics/BGM/Belle-on.mp3" preload="auto"></audio> <!-- まだ -->
-    <audio id="Gaston-off" src="./musics/BGM/Belle-off.mp3" preload="auto"></audio> <!-- まだ -->
+    <audio id="SomethingThere-on" src="./musics/BGM/On Vocal - 愛の芽生え.mp3" preload="auto"></audio>
+    <audio id="SomethingThere-off" src="./musics/BGM/Off Vocal - 愛の芽生え.mp3" preload="auto"></audio>
+    <audio id="Gaston-on" src="./musics/BGM/On Vocal - 強いぞ、ガストン.mp3" preload="auto"></audio>
+    <audio id="Gaston-off" src="./musics/BGM/Off Vocal - 強いぞ、ガストン.mp3" preload="auto"></audio>
     <audio id="HowDoesAMomentLastForever" src="./musics/BGM/How Does A Moment Last Forever.mp3" preload="auto"></audio>
-    <audio id="TheMobSong-on" src="./musics/BGM/夜襲の歌.mp3" preload="auto"></audio>
-    <audio id="TheMobSong-off" src="./musics/BGM/Belle-off.mp3" preload="auto"></audio> <!-- まだ -->
+    <audio id="TheMobSong-on" src="./musics/BGM/On Vocal - 夜襲の歌.mp3" preload="auto"></audio>
+    <audio id="TheMobSong-off" src="./musics/BGM/Off Vocal - 夜襲の歌.mp3" preload="auto"></audio>
     <audio id="CurtainCall" src="./musics/BGM/You Can't Stop The Beat.mp3" preload="auto"></audio>
-    
+
     <!-- BGM -->
     <audio id="Comical" src="./musics/BGM/Belle-on.mp3" preload="auto"></audio> <!-- まだ -->
     <audio id="Combat" src="./musics/BGM/Belle-off.mp3" preload="auto"></audio> <!-- まだ -->
-    <audio id="Unknown" src="./musics/BGM/Belle-off.mp3" preload="auto"></audio> <!-- まだ -->
+    <audio id="Transformation" src="./musics/BGM/Transformation.mp3" preload="auto"></audio>
     <audio id="Upbeat" src="./musics/BGM/Belle-on.mp3" preload="auto"></audio> <!-- まだ -->
     <audio id="BeautyAndTheBeast" src="./musics/BGM/Beauty and the Beast.mp3" preload="auto"></audio>
 
