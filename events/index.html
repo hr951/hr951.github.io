@@ -19,47 +19,224 @@
 
         <div class="grid-container">
 
-            <div class="button-pair">
+            <div class="button-pair" data-control-id="Prologue">
                 <button class="sound-btn" onclick="playMultiSound('Prologue')">Prologue<br>(序章(語り))</button>
+                <div class="control-row">
+                    <button class="individual-stop-btn" onclick="stopSpecificSound('Prologue')"
+                        title="この音だけ停止">X</button>
+                    <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="1"
+                        oninput="updateVolume('Prologue', this.value)">
+                    <div class="playing-indicator">
+                        <svg class="speaker-icon" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="width: 32px; height: 32px; opacity: 1;" xml:space="preserve">
+                            <g>
+                                <path class="st0" d="M25.232,175.83v160.34c0,33.299,26.997,60.303,60.295,60.303h112.275V115.542H85.527
+		C52.229,115.542,25.232,142.531,25.232,175.83z"></path>
+                                <path class="st0" d="M477.003,3.023c-6.073-3.722-13.64-4.029-19.989-0.797L233.921,115.542v280.931l223.093,113.3
+		c6.349,3.233,13.916,2.927,19.989-0.795c6.065-3.722,9.765-10.324,9.765-17.462V20.483C486.768,13.361,483.068,6.745,477.003,3.023
+		z"></path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
             </div>
 
-            <div class="button-pair">
+            <div class="button-pair" data-control-id="Belle-A">
                 <button class="sound-btn" onclick="playMultiSound('Belle-on')">朝の風景_A<br>(ボーカルあり)</button>
                 <button class="sound-btn" onclick="playMultiSound('Belle-off')">朝の風景_A<br>(ボーカルなし)</button>
+                <div class="control-row">
+                    <button class="individual-stop-btn"
+                        onclick="stopSpecificSound('Belle-on'), stopSpecificSound('Belle-off')"
+                        title="この音だけ停止">X</button>
+                    <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="1"
+                        oninput="updateVolume('Belle-on', this.value), updateVolume('Belle-off', this.value)">
+                    <div class="playing-indicator">
+                        <svg class="speaker-icon" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="width: 32px; height: 32px; opacity: 1;" xml:space="preserve">
+                            <g>
+                                <path class="st0" d="M25.232,175.83v160.34c0,33.299,26.997,60.303,60.295,60.303h112.275V115.542H85.527
+		C52.229,115.542,25.232,142.531,25.232,175.83z"></path>
+                                <path class="st0" d="M477.003,3.023c-6.073-3.722-13.64-4.029-19.989-0.797L233.921,115.542v280.931l223.093,113.3
+		c6.349,3.233,13.916,2.927,19.989-0.795c6.065-3.722,9.765-10.324,9.765-17.462V20.483C486.768,13.361,483.068,6.745,477.003,3.023
+		z"></path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
             </div>
 
-            <div class="button-pair">
+            <div class="button-pair" data-control-id="Belle-B">
                 <button class="sound-btn" onclick="playMultiSound('Belle_B-on')">朝の風景_B<br>(ボーカルあり)</button>
                 <button class="sound-btn" onclick="playMultiSound('Belle_B-off')">朝の風景_B<br>(ボーカルなし)</button>
+                <div class="control-row">
+                    <button class="individual-stop-btn"
+                        onclick="stopSpecificSound('Belle_B-on'), stopSpecificSound('Belle_B-off')"
+                        title="この音だけ停止">X</button>
+                    <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="1"
+                        oninput="updateVolume('Belle_B-on', this.value), updateVolume('Belle_B-off', this.value)">
+                    <div class="playing-indicator">
+                        <svg class="speaker-icon" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="width: 32px; height: 32px; opacity: 1;" xml:space="preserve">
+                            <g>
+                                <path class="st0" d="M25.232,175.83v160.34c0,33.299,26.997,60.303,60.295,60.303h112.275V115.542H85.527
+		C52.229,115.542,25.232,142.531,25.232,175.83z"></path>
+                                <path class="st0" d="M477.003,3.023c-6.073-3.722-13.64-4.029-19.989-0.797L233.921,115.542v280.931l223.093,113.3
+		c6.349,3.233,13.916,2.927,19.989-0.795c6.065-3.722,9.765-10.324,9.765-17.462V20.483C486.768,13.361,483.068,6.745,477.003,3.023
+		z"></path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
             </div>
 
-            <div class="button-pair">
+            <div class="button-pair" data-control-id="BeOurGuest">
                 <button class="sound-btn" onclick="playMultiSound('BeOurGuest-on')">ひとりぼっちの晩餐会<br>(ボーカルあり)</button>
                 <button class="sound-btn" onclick="playMultiSound('BeOurGuest-off')">ひとりぼっちの晩餐会<br>(ボーカルなし)</button>
+                <div class="control-row">
+                    <button class="individual-stop-btn"
+                        onclick="stopSpecificSound('BeOurGuest-on'), stopSpecificSound('BeOurGuest-off')"
+                        title="この音だけ停止">X</button>
+                    <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="1"
+                        oninput="updateVolume('BeOurGuest-on', this.value), updateVolume('BeOurGuest-off', this.value)">
+                    <div class="playing-indicator">
+                        <svg class="speaker-icon" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="width: 32px; height: 32px; opacity: 1;" xml:space="preserve">
+                            <g>
+                                <path class="st0" d="M25.232,175.83v160.34c0,33.299,26.997,60.303,60.295,60.303h112.275V115.542H85.527
+		C52.229,115.542,25.232,142.531,25.232,175.83z"></path>
+                                <path class="st0" d="M477.003,3.023c-6.073-3.722-13.64-4.029-19.989-0.797L233.921,115.542v280.931l223.093,113.3
+		c6.349,3.233,13.916,2.927,19.989-0.795c6.065-3.722,9.765-10.324,9.765-17.462V20.483C486.768,13.361,483.068,6.745,477.003,3.023
+		z"></path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
             </div>
 
-            <div class="button-pair">
+            <div class="button-pair" data-control-id="SomethingThere">
                 <button class="sound-btn" onclick="playMultiSound('SomethingThere-on')">愛の芽生え<br>(ボーカルあり)</button>
                 <button class="sound-btn" onclick="playMultiSound('SomethingThere-off')">愛の芽生え<br>(ボーカルなし)</button>
+                <div class="control-row">
+                    <button class="individual-stop-btn"
+                        onclick="stopSpecificSound('SomethingThere-on'), stopSpecificSound('SomethingThere-off')"
+                        title="この音だけ停止">X</button>
+                    <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="1"
+                        oninput="updateVolume('SomethingThere-on', this.value), updateVolume('SomethingThere-off', this.value)">
+                    <div class="playing-indicator">
+                        <svg class="speaker-icon" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="width: 32px; height: 32px; opacity: 1;" xml:space="preserve">
+                            <g>
+                                <path class="st0" d="M25.232,175.83v160.34c0,33.299,26.997,60.303,60.295,60.303h112.275V115.542H85.527
+		C52.229,115.542,25.232,142.531,25.232,175.83z"></path>
+                                <path class="st0" d="M477.003,3.023c-6.073-3.722-13.64-4.029-19.989-0.797L233.921,115.542v280.931l223.093,113.3
+		c6.349,3.233,13.916,2.927,19.989-0.795c6.065-3.722,9.765-10.324,9.765-17.462V20.483C486.768,13.361,483.068,6.745,477.003,3.023
+		z"></path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
             </div>
 
-            <div class="button-pair">
+            <div class="button-pair" data-control-id="Gaston">
                 <button class="sound-btn" onclick="playMultiSound('Gaston-on')">強いぞ、ガストン<br>(ボーカルあり)</button>
                 <button class="sound-btn" onclick="playMultiSound('Gaston-off')">強いぞ、ガストン<br>(ボーカルなし)</button>
+                <div class="control-row">
+                    <button class="individual-stop-btn"
+                        onclick="stopSpecificSound('Gaston-on'), stopSpecificSound('Gaston-off')"
+                        title="この音だけ停止">X</button>
+                    <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="1"
+                        oninput="updateVolume('Gaston-on', this.value), updateVolume('Gaston-off', this.value)">
+                    <div class="playing-indicator">
+                        <svg class="speaker-icon" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="width: 32px; height: 32px; opacity: 1;" xml:space="preserve">
+                            <g>
+                                <path class="st0" d="M25.232,175.83v160.34c0,33.299,26.997,60.303,60.295,60.303h112.275V115.542H85.527
+		C52.229,115.542,25.232,142.531,25.232,175.83z"></path>
+                                <path class="st0" d="M477.003,3.023c-6.073-3.722-13.64-4.029-19.989-0.797L233.921,115.542v280.931l223.093,113.3
+		c6.349,3.233,13.916,2.927,19.989-0.795c6.065-3.722,9.765-10.324,9.765-17.462V20.483C486.768,13.361,483.068,6.745,477.003,3.023
+		z"></path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
             </div>
 
-            <div class="button-pair">
+            <div class="button-pair" data-control-id="HowDoesAMomentLastForever">
                 <button class="sound-btn" onclick="playMultiSound('HowDoesAMomentLastForever')">How Does A Moment Last
                     Forever</button>
+                <div class="control-row">
+                    <button class="individual-stop-btn" onclick="stopSpecificSound('HowDoesAMomentLastForever')"
+                        title="この音だけ停止">X</button>
+                    <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="1"
+                        oninput="updateVolume('HowDoesAMomentLastForever', this.value)">
+                    <div class="playing-indicator">
+                        <svg class="speaker-icon" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="width: 32px; height: 32px; opacity: 1;" xml:space="preserve">
+                            <g>
+                                <path class="st0" d="M25.232,175.83v160.34c0,33.299,26.997,60.303,60.295,60.303h112.275V115.542H85.527
+		C52.229,115.542,25.232,142.531,25.232,175.83z"></path>
+                                <path class="st0" d="M477.003,3.023c-6.073-3.722-13.64-4.029-19.989-0.797L233.921,115.542v280.931l223.093,113.3
+		c6.349,3.233,13.916,2.927,19.989-0.795c6.065-3.722,9.765-10.324,9.765-17.462V20.483C486.768,13.361,483.068,6.745,477.003,3.023
+		z"></path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
             </div>
 
-            <div class="button-pair">
+            <div class=" button-pair" data-control-id="TheMobSong">
                 <button class="sound-btn" onclick="playMultiSound('TheMobSong-on')">夜襲の歌<br>(ボーカルあり)</button>
                 <button class="sound-btn" onclick="playMultiSound('TheMobSong-off')">夜襲の歌<br>(ボーカルなし)</button>
+                <div class="control-row">
+                    <button class="individual-stop-btn"
+                        onclick="stopSpecificSound('TheMobSong-on'), stopSpecificSound('TheMobSong-off')"
+                        title="この音だけ停止">X</button>
+                    <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="1"
+                        oninput="updateVolume('TheMobSong-on', this.value), updateVolume('TheMobSong-off', this.value)">
+                    <div class="playing-indicator">
+                        <svg class="speaker-icon" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="width: 32px; height: 32px; opacity: 1;" xml:space="preserve">
+                            <g>
+                                <path class="st0" d="M25.232,175.83v160.34c0,33.299,26.997,60.303,60.295,60.303h112.275V115.542H85.527
+		C52.229,115.542,25.232,142.531,25.232,175.83z"></path>
+                                <path class="st0" d="M477.003,3.023c-6.073-3.722-13.64-4.029-19.989-0.797L233.921,115.542v280.931l223.093,113.3
+		c6.349,3.233,13.916,2.927,19.989-0.795c6.065-3.722,9.765-10.324,9.765-17.462V20.483C486.768,13.361,483.068,6.745,477.003,3.023
+		z"></path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
             </div>
 
-            <div class="button-pair">
+            <div class="button-pair" data-control-id="CurtainCall">
                 <button class="sound-btn" onclick="playMultiSound('CurtainCall')">You Can't Stop The Beat</button>
+                <div class="control-row">
+                    <button class="individual-stop-btn" onclick="stopSpecificSound('CurtainCall')"
+                        title="この音だけ停止">X</button>
+                    <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="1"
+                        oninput="updateVolume('CurtainCall', this.value)">
+                    <div class="playing-indicator">
+                        <svg class="speaker-icon" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="width: 32px; height: 32px; opacity: 1;" xml:space="preserve">
+                            <g>
+                                <path class="st0" d="M25.232,175.83v160.34c0,33.299,26.997,60.303,60.295,60.303h112.275V115.542H85.527
+		C52.229,115.542,25.232,142.531,25.232,175.83z"></path>
+                                <path class="st0" d="M477.003,3.023c-6.073-3.722-13.64-4.029-19.989-0.797L233.921,115.542v280.931l223.093,113.3
+		c6.349,3.233,13.916,2.927,19.989-0.795c6.065-3.722,9.765-10.324,9.765-17.462V20.483C486.768,13.361,483.068,6.745,477.003,3.023
+		z"></path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -68,24 +245,230 @@
 
         <div class="grid-container">
 
-            <div class="button-pair">
+            <div class="button-pair" data-control-id="Comical">
                 <button class="sound-btn" onclick="playMultiSound('Comical')">コミカル系</button>
+                <div class="control-row">
+                    <button class="individual-stop-btn" onclick="stopSpecificSound('Comical')"
+                        title="この音だけ停止">X</button>
+                    <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="1"
+                        oninput="updateVolume('Comical', this.value)">
+                    <div class="playing-indicator">
+                        <svg class="speaker-icon" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="width: 32px; height: 32px; opacity: 1;" xml:space="preserve">
+                            <g>
+                                <path class="st0" d="M25.232,175.83v160.34c0,33.299,26.997,60.303,60.295,60.303h112.275V115.542H85.527
+		C52.229,115.542,25.232,142.531,25.232,175.83z"></path>
+                                <path class="st0" d="M477.003,3.023c-6.073-3.722-13.64-4.029-19.989-0.797L233.921,115.542v280.931l223.093,113.3
+		c6.349,3.233,13.916,2.927,19.989-0.795c6.065-3.722,9.765-10.324,9.765-17.462V20.483C486.768,13.361,483.068,6.745,477.003,3.023
+		z"></path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
             </div>
 
-            <div class="button-pair">
+            <div class="button-pair" data-control-id="Combat">
                 <button class="sound-btn" onclick="playMultiSound('Combat')">戦闘</button>
+                <div class="control-row">
+                    <button class="individual-stop-btn" onclick="stopSpecificSound('Combat')" title="この音だけ停止">X</button>
+                    <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="1"
+                        oninput="updateVolume('Combat', this.value)">
+                    <div class="playing-indicator">
+                        <svg class="speaker-icon" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="width: 32px; height: 32px; opacity: 1;" xml:space="preserve">
+                            <g>
+                                <path class="st0" d="M25.232,175.83v160.34c0,33.299,26.997,60.303,60.295,60.303h112.275V115.542H85.527
+		C52.229,115.542,25.232,142.531,25.232,175.83z"></path>
+                                <path class="st0" d="M477.003,3.023c-6.073-3.722-13.64-4.029-19.989-0.797L233.921,115.542v280.931l223.093,113.3
+		c6.349,3.233,13.916,2.927,19.989-0.795c6.065-3.722,9.765-10.324,9.765-17.462V20.483C486.768,13.361,483.068,6.745,477.003,3.023
+		z"></path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
             </div>
 
-            <div class="button-pair">
+            <div class="button-pair" data-control-id="Transformation">
                 <button class="sound-btn" onclick="playMultiSound('Transformation')">Transformation</button>
+                <div class="control-row">
+                    <button class="individual-stop-btn" onclick="stopSpecificSound('Transformation')"
+                        title="この音だけ停止">X</button>
+                    <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="1"
+                        oninput="updateVolume('Transformation', this.value)">
+                    <div class="playing-indicator">
+                        <svg class="speaker-icon" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="width: 32px; height: 32px; opacity: 1;" xml:space="preserve">
+                            <g>
+                                <path class="st0" d="M25.232,175.83v160.34c0,33.299,26.997,60.303,60.295,60.303h112.275V115.542H85.527
+		C52.229,115.542,25.232,142.531,25.232,175.83z"></path>
+                                <path class="st0" d="M477.003,3.023c-6.073-3.722-13.64-4.029-19.989-0.797L233.921,115.542v280.931l223.093,113.3
+		c6.349,3.233,13.916,2.927,19.989-0.795c6.065-3.722,9.765-10.324,9.765-17.462V20.483C486.768,13.361,483.068,6.745,477.003,3.023
+		z"></path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
             </div>
 
-            <div class="button-pair">
+            <div class="button-pair" data-control-id="Upbeat">
                 <button class="sound-btn" onclick="playMultiSound('Upbeat')">明るい音楽</button>
+                <div class="control-row">
+                    <button class="individual-stop-btn" onclick="stopSpecificSound('Upbeat')" title="この音だけ停止">X</button>
+                    <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="1"
+                        oninput="updateVolume('Upbeat', this.value)">
+                    <div class="playing-indicator">
+                        <svg class="speaker-icon" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="width: 32px; height: 32px; opacity: 1;" xml:space="preserve">
+                            <g>
+                                <path class="st0" d="M25.232,175.83v160.34c0,33.299,26.997,60.303,60.295,60.303h112.275V115.542H85.527
+		C52.229,115.542,25.232,142.531,25.232,175.83z"></path>
+                                <path class="st0" d="M477.003,3.023c-6.073-3.722-13.64-4.029-19.989-0.797L233.921,115.542v280.931l223.093,113.3
+		c6.349,3.233,13.916,2.927,19.989-0.795c6.065-3.722,9.765-10.324,9.765-17.462V20.483C486.768,13.361,483.068,6.745,477.003,3.023
+		z"></path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
             </div>
 
-            <div class="button-pair">
-                <button class="sound-btn" onclick="playMultiSound('BeautyAndTheBeast')">Beauty and the Beast</button>
+            <div class="button-pair" data-control-id="BeautyAndTheBeast">
+                <button class="sound-btn" onclick="playMultiSound('BeautyAndTheBeast')">Beauty and the
+                    Beast</button>
+                <div class="control-row">
+                    <button class="individual-stop-btn" onclick="stopSpecificSound('BeautyAndTheBeast')"
+                        title="この音だけ停止">X</button>
+                    <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="1"
+                        oninput="updateVolume('BeautyAndTheBeast', this.value)">
+                    <div class="playing-indicator">
+                        <svg class="speaker-icon" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="width: 32px; height: 32px; opacity: 1;" xml:space="preserve">
+                            <g>
+                                <path class="st0" d="M25.232,175.83v160.34c0,33.299,26.997,60.303,60.295,60.303h112.275V115.542H85.527
+		C52.229,115.542,25.232,142.531,25.232,175.83z"></path>
+                                <path class="st0" d="M477.003,3.023c-6.073-3.722-13.64-4.029-19.989-0.797L233.921,115.542v280.931l223.093,113.3
+		c6.349,3.233,13.916,2.927,19.989-0.795c6.065-3.722,9.765-10.324,9.765-17.462V20.483C486.768,13.361,483.068,6.745,477.003,3.023
+		z"></path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Test -->
+            <div class="button-pair" data-control-id="Comical_1">
+                <button class="sound-btn" onclick="playMultiSound('Comical_1')">駆け抜けろハロウィンレース</button>
+                <div class="control-row">
+                    <button class="individual-stop-btn" onclick="stopSpecificSound('Comical_1')"
+                        title="この音だけ停止">X</button>
+                    <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="1"
+                        oninput="updateVolume('Comical_1', this.value)">
+                    <div class="playing-indicator">
+                        <svg class="speaker-icon" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="width: 32px; height: 32px; opacity: 1;" xml:space="preserve">
+                            <g>
+                                <path class="st0" d="M25.232,175.83v160.34c0,33.299,26.997,60.303,60.295,60.303h112.275V115.542H85.527
+		C52.229,115.542,25.232,142.531,25.232,175.83z"></path>
+                                <path class="st0" d="M477.003,3.023c-6.073-3.722-13.64-4.029-19.989-0.797L233.921,115.542v280.931l223.093,113.3
+		c6.349,3.233,13.916,2.927,19.989-0.795c6.065-3.722,9.765-10.324,9.765-17.462V20.483C486.768,13.361,483.068,6.745,477.003,3.023
+		z"></path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="button-pair" data-control-id="Comical_2">
+                <button class="sound-btn" onclick="playMultiSound('Comical_2')">おもちゃの国のマーチ</button>
+                <div class="control-row">
+                    <button class="individual-stop-btn" onclick="stopSpecificSound('Comical_2')"
+                        title="この音だけ停止">X</button>
+                    <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="1"
+                        oninput="updateVolume('Comical_2', this.value)">
+                    <div class="playing-indicator">
+                        <svg class="speaker-icon" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="width: 32px; height: 32px; opacity: 1;" xml:space="preserve">
+                            <g>
+                                <path class="st0" d="M25.232,175.83v160.34c0,33.299,26.997,60.303,60.295,60.303h112.275V115.542H85.527
+		C52.229,115.542,25.232,142.531,25.232,175.83z"></path>
+                                <path class="st0" d="M477.003,3.023c-6.073-3.722-13.64-4.029-19.989-0.797L233.921,115.542v280.931l223.093,113.3
+		c6.349,3.233,13.916,2.927,19.989-0.795c6.065-3.722,9.765-10.324,9.765-17.462V20.483C486.768,13.361,483.068,6.745,477.003,3.023
+		z"></path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="button-pair" data-control-id="Comical_3">
+                <button class="sound-btn" onclick="playMultiSound('Comical_3')">ひよこのかけっこ</button>
+                <div class="control-row">
+                    <button class="individual-stop-btn" onclick="stopSpecificSound('Comical_3')"
+                        title="この音だけ停止">X</button>
+                    <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="1"
+                        oninput="updateVolume('Comical_3', this.value)">
+                    <div class="playing-indicator">
+                        <svg class="speaker-icon" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="width: 32px; height: 32px; opacity: 1;" xml:space="preserve">
+                            <g>
+                                <path class="st0" d="M25.232,175.83v160.34c0,33.299,26.997,60.303,60.295,60.303h112.275V115.542H85.527
+		C52.229,115.542,25.232,142.531,25.232,175.83z"></path>
+                                <path class="st0" d="M477.003,3.023c-6.073-3.722-13.64-4.029-19.989-0.797L233.921,115.542v280.931l223.093,113.3
+		c6.349,3.233,13.916,2.927,19.989-0.795c6.065-3.722,9.765-10.324,9.765-17.462V20.483C486.768,13.361,483.068,6.745,477.003,3.023
+		z"></path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="button-pair" data-control-id="Comical_4">
+                <button class="sound-btn" onclick="playMultiSound('Comical_4')">初めてのお菓子作り</button>
+                <div class="control-row">
+                    <button class="individual-stop-btn" onclick="stopSpecificSound('Comical_4')"
+                        title="この音だけ停止">X</button>
+                    <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="1"
+                        oninput="updateVolume('Comical_4', this.value)">
+                    <div class="playing-indicator">
+                        <svg class="speaker-icon" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="width: 32px; height: 32px; opacity: 1;" xml:space="preserve">
+                            <g>
+                                <path class="st0" d="M25.232,175.83v160.34c0,33.299,26.997,60.303,60.295,60.303h112.275V115.542H85.527
+		C52.229,115.542,25.232,142.531,25.232,175.83z"></path>
+                                <path class="st0" d="M477.003,3.023c-6.073-3.722-13.64-4.029-19.989-0.797L233.921,115.542v280.931l223.093,113.3
+		c6.349,3.233,13.916,2.927,19.989-0.795c6.065-3.722,9.765-10.324,9.765-17.462V20.483C486.768,13.361,483.068,6.745,477.003,3.023
+		z"></path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="button-pair" data-control-id="Comical_5">
+                <button class="sound-btn" onclick="playMultiSound('Comical_5')">コミカル・ピチカート</button>
+                <div class="control-row">
+                    <button class="individual-stop-btn" onclick="stopSpecificSound('Comical_5')"
+                        title="この音だけ停止">X</button>
+                    <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="1"
+                        oninput="updateVolume('Comical_5', this.value)">
+                    <div class="playing-indicator">
+                        <svg class="speaker-icon" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="width: 32px; height: 32px; opacity: 1;" xml:space="preserve">
+                            <g>
+                                <path class="st0" d="M25.232,175.83v160.34c0,33.299,26.997,60.303,60.295,60.303h112.275V115.542H85.527
+		C52.229,115.542,25.232,142.531,25.232,175.83z"></path>
+                                <path class="st0" d="M477.003,3.023c-6.073-3.722-13.64-4.029-19.989-0.797L233.921,115.542v280.931l223.093,113.3
+		c6.349,3.233,13.916,2.927,19.989-0.795c6.065-3.722,9.765-10.324,9.765-17.462V20.483C486.768,13.361,483.068,6.745,477.003,3.023
+		z"></path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -94,36 +477,210 @@
 
         <div class="grid-container">
 
-            <div class="button-pair">
+            <div class="button-pair" data-control-id="Horse">
                 <button class="sound-btn" onclick="playMultiSound('Horse')">馬の鳴き声</button>
+                <div class="control-row">
+                    <button class="individual-stop-btn" onclick="stopSpecificSound('Horse')" title="この音だけ停止">X</button>
+                    <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="1"
+                        oninput="updateVolume('Horse', this.value)">
+                    <div class="playing-indicator">
+                        <svg class="speaker-icon" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="width: 32px; height: 32px; opacity: 1;" xml:space="preserve">
+                            <g>
+                                <path class="st0" d="M25.232,175.83v160.34c0,33.299,26.997,60.303,60.295,60.303h112.275V115.542H85.527
+		C52.229,115.542,25.232,142.531,25.232,175.83z"></path>
+                                <path class="st0" d="M477.003,3.023c-6.073-3.722-13.64-4.029-19.989-0.797L233.921,115.542v280.931l223.093,113.3
+		c6.349,3.233,13.916,2.927,19.989-0.795c6.065-3.722,9.765-10.324,9.765-17.462V20.483C486.768,13.361,483.068,6.745,477.003,3.023
+		z"></path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
             </div>
 
-            <div class="button-pair">
-                <button class="sound-btn" onclick="playMultiSound('BeastGrowl')">野獣の唸り声</button>
+            <div class="button-pair" data-control-id="BeastGrowl">
+                <button class="sound-btn" onclick="playMultiSound('BeastGrowl')">野獣のうめき声</button>
+                <div class="control-row">
+                    <button class="individual-stop-btn" onclick="stopSpecificSound('BeastGrowl')"
+                        title="この音だけ停止">X</button>
+                    <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="1"
+                        oninput="updateVolume('BeastGrowl', this.value)">
+                    <div class="playing-indicator">
+                        <svg class="speaker-icon" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="width: 32px; height: 32px; opacity: 1;" xml:space="preserve">
+                            <g>
+                                <path class="st0" d="M25.232,175.83v160.34c0,33.299,26.997,60.303,60.295,60.303h112.275V115.542H85.527
+		C52.229,115.542,25.232,142.531,25.232,175.83z"></path>
+                                <path class="st0" d="M477.003,3.023c-6.073-3.722-13.64-4.029-19.989-0.797L233.921,115.542v280.931l223.093,113.3
+		c6.349,3.233,13.916,2.927,19.989-0.795c6.065-3.722,9.765-10.324,9.765-17.462V20.483C486.768,13.361,483.068,6.745,477.003,3.023
+		z"></path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
             </div>
 
-            <div class="button-pair">
+            <div class="button-pair" data-control-id="Blizzard">
+                <button class="sound-btn" onclick="playMultiSound('Blizzard')">吹雪の音</button>
+                <div class="control-row">
+                    <button class="individual-stop-btn" onclick="stopSpecificSound('Blizzard')"
+                        title="この音だけ停止">X</button>
+                    <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="1"
+                        oninput="updateVolume('Blizzard', this.value)">
+                    <div class="playing-indicator">
+                        <svg class="speaker-icon" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="width: 32px; height: 32px; opacity: 1;" xml:space="preserve">
+                            <g>
+                                <path class="st0" d="M25.232,175.83v160.34c0,33.299,26.997,60.303,60.295,60.303h112.275V115.542H85.527
+		C52.229,115.542,25.232,142.531,25.232,175.83z"></path>
+                                <path class="st0" d="M477.003,3.023c-6.073-3.722-13.64-4.029-19.989-0.797L233.921,115.542v280.931l223.093,113.3
+		c6.349,3.233,13.916,2.927,19.989-0.795c6.065-3.722,9.765-10.324,9.765-17.462V20.483C486.768,13.361,483.068,6.745,477.003,3.023
+		z"></path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="button-pair" data-control-id="WolfGrowl">
                 <button class="sound-btn" onclick="playMultiSound('WolfGrowl')">狼の唸り声</button>
+                <div class="control-row">
+                    <button class="individual-stop-btn" onclick="stopSpecificSound('WolfGrowl')"
+                        title="この音だけ停止">X</button>
+                    <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="1"
+                        oninput="updateVolume('WolfGrowl', this.value)">
+                    <div class="playing-indicator">
+                        <svg class="speaker-icon" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="width: 32px; height: 32px; opacity: 1;" xml:space="preserve">
+                            <g>
+                                <path class="st0" d="M25.232,175.83v160.34c0,33.299,26.997,60.303,60.295,60.303h112.275V115.542H85.527
+		C52.229,115.542,25.232,142.531,25.232,175.83z"></path>
+                                <path class="st0" d="M477.003,3.023c-6.073-3.722-13.64-4.029-19.989-0.797L233.921,115.542v280.931l223.093,113.3
+		c6.349,3.233,13.916,2.927,19.989-0.795c6.065-3.722,9.765-10.324,9.765-17.462V20.483C486.768,13.361,483.068,6.745,477.003,3.023
+		z"></path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
             </div>
 
-            <div class="button-pair">
+            <div class="button-pair" data-control-id="BreakDoor">
                 <button class="sound-btn" onclick="playMultiSound('BreakDoor')">門を壊す音</button>
+                <div class="control-row">
+                    <button class="individual-stop-btn" onclick="stopSpecificSound('BreakDoor')"
+                        title="この音だけ停止">X</button>
+                    <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="1"
+                        oninput="updateVolume('BreakDoor', this.value)">
+                    <div class="playing-indicator">
+                        <svg class="speaker-icon" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="width: 32px; height: 32px; opacity: 1;" xml:space="preserve">
+                            <g>
+                                <path class="st0" d="M25.232,175.83v160.34c0,33.299,26.997,60.303,60.295,60.303h112.275V115.542H85.527
+		C52.229,115.542,25.232,142.531,25.232,175.83z"></path>
+                                <path class="st0" d="M477.003,3.023c-6.073-3.722-13.64-4.029-19.989-0.797L233.921,115.542v280.931l223.093,113.3
+		c6.349,3.233,13.916,2.927,19.989-0.795c6.065-3.722,9.765-10.324,9.765-17.462V20.483C486.768,13.361,483.068,6.745,477.003,3.023
+		z"></path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
             </div>
 
-            <div class="button-pair">
+            <div class="button-pair" data-control-id="Burning">
                 <button class="sound-btn" onclick="playMultiSound('Burning')">あぶる音</button>
+                <div class="control-row">
+                    <button class="individual-stop-btn" onclick="stopSpecificSound('Burning')"
+                        title="この音だけ停止">X</button>
+                    <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="1"
+                        oninput="updateVolume('Burning', this.value)">
+                    <div class="playing-indicator">
+                        <svg class="speaker-icon" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="width: 32px; height: 32px; opacity: 1;" xml:space="preserve">
+                            <g>
+                                <path class="st0" d="M25.232,175.83v160.34c0,33.299,26.997,60.303,60.295,60.303h112.275V115.542H85.527
+		C52.229,115.542,25.232,142.531,25.232,175.83z"></path>
+                                <path class="st0" d="M477.003,3.023c-6.073-3.722-13.64-4.029-19.989-0.797L233.921,115.542v280.931l223.093,113.3
+		c6.349,3.233,13.916,2.927,19.989-0.795c6.065-3.722,9.765-10.324,9.765-17.462V20.483C486.768,13.361,483.068,6.745,477.003,3.023
+		z"></path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
             </div>
 
-            <div class="button-pair">
+            <div class="button-pair" data-control-id="AppearKnife">
                 <button class="sound-btn" onclick="playMultiSound('AppearKnife')">ナイフを出す音</button>
+                <div class="control-row">
+                    <button class="individual-stop-btn" onclick="stopSpecificSound('AppearKnife')"
+                        title="この音だけ停止">X</button>
+                    <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="1"
+                        oninput="updateVolume('AppearKnife', this.value)">
+                    <div class="playing-indicator">
+                        <svg class="speaker-icon" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="width: 32px; height: 32px; opacity: 1;" xml:space="preserve">
+                            <g>
+                                <path class="st0" d="M25.232,175.83v160.34c0,33.299,26.997,60.303,60.295,60.303h112.275V115.542H85.527
+		C52.229,115.542,25.232,142.531,25.232,175.83z"></path>
+                                <path class="st0" d="M477.003,3.023c-6.073-3.722-13.64-4.029-19.989-0.797L233.921,115.542v280.931l223.093,113.3
+		c6.349,3.233,13.916,2.927,19.989-0.795c6.065-3.722,9.765-10.324,9.765-17.462V20.483C486.768,13.361,483.068,6.745,477.003,3.023
+		z"></path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
             </div>
 
-            <div class="button-pair">
+            <div class="button-pair" data-control-id="StabWithKnife">
                 <button class="sound-btn" onclick="playMultiSound('StabWithKnife')">ナイフで刺す音</button>
+                <div class="control-row">
+                    <button class="individual-stop-btn" onclick="stopSpecificSound('StabWithKnife')"
+                        title="この音だけ停止">X</button>
+                    <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="1"
+                        oninput="updateVolume('StabWithKnife', this.value)">
+                    <div class="playing-indicator">
+                        <svg class="speaker-icon" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="width: 32px; height: 32px; opacity: 1;" xml:space="preserve">
+                            <g>
+                                <path class="st0" d="M25.232,175.83v160.34c0,33.299,26.997,60.303,60.295,60.303h112.275V115.542H85.527
+		C52.229,115.542,25.232,142.531,25.232,175.83z"></path>
+                                <path class="st0" d="M477.003,3.023c-6.073-3.722-13.64-4.029-19.989-0.797L233.921,115.542v280.931l223.093,113.3
+		c6.349,3.233,13.916,2.927,19.989-0.795c6.065-3.722,9.765-10.324,9.765-17.462V20.483C486.768,13.361,483.068,6.745,477.003,3.023
+		z"></path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
             </div>
 
-            <div class="button-pair">
+            <div class="button-pair" data-control-id="Collapse">
                 <button class="sound-btn" onclick="playMultiSound('Collapse')">崩れる音</button>
+                <div class="control-row">
+                    <button class="individual-stop-btn" onclick="stopSpecificSound('Collapse')"
+                        title="この音だけ停止">X</button>
+                    <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="1"
+                        oninput="updateVolume('Collapse', this.value)">
+                    <div class="playing-indicator">
+                        <svg class="speaker-icon" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="width: 32px; height: 32px; opacity: 1;" xml:space="preserve">
+                            <g>
+                                <path class="st0" d="M25.232,175.83v160.34c0,33.299,26.997,60.303,60.295,60.303h112.275V115.542H85.527
+		C52.229,115.542,25.232,142.531,25.232,175.83z"></path>
+                                <path class="st0" d="M477.003,3.023c-6.073-3.722-13.64-4.029-19.989-0.797L233.921,115.542v280.931l223.093,113.3
+		c6.349,3.233,13.916,2.927,19.989-0.795c6.065-3.722,9.765-10.324,9.765-17.462V20.483C486.768,13.361,483.068,6.745,477.003,3.023
+		z"></path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -139,9 +696,9 @@
 
     <!-- Musics -->
     <audio id="Prologue" src="./musics/BGM/Prologue.mp3" preload="auto"></audio>
-    <audio id="Belle-on" src="./musics/BGM/Belle-on.mp3" preload="auto"></audio> <!-- まだ -->
+    <audio id="Belle-on" src="./musics/BGM/On Vocal - 朝の風景_A.mp3" preload="auto"></audio>
     <audio id="Belle-off" src="./musics/BGM/Off Vocal - 朝の風景_A.mp3" preload="auto"></audio>
-    <audio id="Belle_B-on" src="./musics/BGM/Belle-on.mp3" preload="auto"></audio> <!-- まだ -->
+    <audio id="Belle_B-on" src="./musics/BGM/On Vocal - 朝の風景_B.mp3" preload="auto"></audio>
     <audio id="Belle_B-off" src="./musics/BGM/Off Vocal - 朝の風景_B.mp3" preload="auto"></audio>
     <audio id="BeOurGuest-on" src="./musics/BGM/On Vocal - ひとりぼっちの晩餐会.mp3" preload="auto"></audio>
     <audio id="BeOurGuest-off" src="./musics/BGM/Off Vocal - ひとりぼっちの晩餐会.mp3" preload="auto"></audio>
@@ -161,10 +718,18 @@
     <audio id="Upbeat" src="./musics/BGM/Belle-on.mp3" preload="auto"></audio> <!-- まだ -->
     <audio id="BeautyAndTheBeast" src="./musics/BGM/Beauty and the Beast.mp3" preload="auto"></audio>
 
+    <!-- Test -->
+    <audio id="Comical_1" src="./musics/BGM/駆け抜けろハロウィンレース.mp3" preload="auto"></audio>
+    <audio id="Comical_2" src="./musics/BGM/おもちゃの国のマーチ.mp3" preload="auto"></audio>
+    <audio id="Comical_3" src="./musics/BGM/ひよこのかけっこ.mp3" preload="auto"></audio>
+    <audio id="Comical_4" src="./musics/BGM/初めてのお菓子作り.mp3" preload="auto"></audio>
+    <audio id="Comical_5" src="./musics/BGM/コミカル・ピチカート.mp3" preload="auto"></audio>
+
     <!-- SE -->
-    <audio id="Horse" src="./musics/SE/Horse.mp3" preload="auto"></audio> <!-- まだ -->
-    <audio id="BeastGrowl" src="./musics/SE/Beast Growl.mp3" preload="auto"></audio> <!-- まだ -->
-    <audio id="WolfGrowl" src="./musics/SE/Wolf Growl.mp3" preload="auto"></audio> <!-- まだ -->
+    <audio id="Horse" src="./musics/SE/Horse.mp3" preload="auto"></audio>
+    <audio id="BeastGrowl" src="./musics/SE/Beast Growl.mp3" preload="auto"></audio>
+    <audio id="Blizzard" src="./musics/SE/Blizzard.mp3" preload="auto"></audio>
+    <audio id="WolfGrowl" src="./musics/SE/Wolf Growl.mp3" preload="auto"></audio>
     <audio id="BreakDoor" src="./musics/SE/Break Door.mp3" preload="auto"></audio> <!-- まだ -->
     <audio id="Burning" src="./musics/SE/Burning.mp3" preload="auto"></audio> <!-- まだ -->
     <audio id="AppearKnife" src="./musics/SE/Appear Knife.mp3" preload="auto"></audio> <!-- まだ -->
